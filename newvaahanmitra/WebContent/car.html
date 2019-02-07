@@ -1,0 +1,2240 @@
+<!DOCTYPE html>
+<html >
+<head>
+  <meta charset="UTF-8">
+  <title>Bootstrap 3 Show Many Slide One Carousel</title>
+  <meta name="viewport" content="width=device-width">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
+
+  <link rel='stylesheet prefetch' href='http://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css'>
+
+      <link rel="stylesheet" href="assets/css/carslider.css">
+    
+ <link href="https://fonts.googleapis.com/css?family=Open+Sans|Bitter" rel="stylesheet" type="text/css">
+
+
+ <link rel="stylesheet" href="http://netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css">
+ <link rel="stylesheet" href="assets/css/jquery.scrolling-tabs.css">
+ <link rel="stylesheet" href="assets/css/st-demo.css">
+<style>
+.one {
+    font-size: 16px;
+    color: #9a2220;
+    font-family: sans-serif;
+    }
+    .text1{
+   background: #9a2220;
+    color: #fff;
+    border: 1px solid #fff;
+    border-radius: 6px;
+    font-size: 15px;
+    padding: 2px 8px;
+    font-family: monospace;
+    font-weight: 500;
+    letter-spacing: 0em;
+}
+#two{
+    border: 1.5px solid #f5f5f5;
+    border-radius: 4px;
+  }
+    #two:hover{
+    border: 1.5px solid #f5f5f5;
+    border-radius: 4px;
+       box-shadow: 0px 0px 10px #9d9d9d;
+    }
+ .nav-tabs>li.active>a, .nav-tabs>li.active>a:focus, .nav-tabs>li.active>a:hover {
+    color: #ffffff;
+    cursor: default;
+    background-color: #9a2220;
+    border: 1px solid #9a2220;
+    border-bottom-color: transparent;
+    font-size: 17px;
+   /*  line-height:7px; */
+    font-family: monospace;
+    margin: 0 2px;
+} 
+.carousel-control.right {
+    right: 0;
+    left: auto;
+    background-image: -webkit-linear-gradient(left,rgba(0,0,0,.0001) 0,rgba(255, 255, 255, 0.5) 100%);
+    background-image: -o-linear-gradient(left,rgba(0,0,0,.0001) 0,rgba(0,0,0,.5) 100%);
+    background-image: -webkit-gradient(linear,left top,right top,from(rgba(0,0,0,.0001)),to(rgba(255, 255, 255, 0.5)));
+    background-image: linear-gradient(to right,rgba(0,0,0,.0001) 0,rgba(255, 255, 255, 0.5) 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#00000000', endColorstr='#80000000', GradientType=1);
+    background-repeat: repeat-x;
+}
+.carousel-control.left {
+    background-image: -webkit-linear-gradient(left,rgba(0,0,0,.5) 0,rgba(0,0,0,.0001) 100%);
+    background-image: -o-linear-gradient(left,rgba(0,0,0,.5) 0,rgba(0,0,0,.0001) 100%);
+    background-image: -webkit-gradient(linear,left top,right top,from(rgba(0,0,0,.5)),to(rgba(255, 255, 255, 0.0001)));
+    background-image: linear-gradient(to right,rgba(255, 255, 255, 0.5) 0,rgba(0,0,0,.0001) 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#80000000', endColorstr='#00000000', GradientType=1);
+    background-repeat: repeat-x;
+}
+carousel-control {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    width: 96%;
+    font-size: 20px;
+    color: #9a2220;
+    text-align: center;
+    text-shadow: 0 1px 2px rgb(154, 34, 32);
+    filter: alpha(opacity=50);
+    opacity: .5;
+} 
+.nav>li>a {
+    position: relative;
+    display: block;
+    padding: 2px 13px;
+} 
+.scrtabs-tab-scroll-arrow {
+  border: 1px solid #dddddd;
+    border-top: none;
+    color: #9a2220;
+    display: none;
+    float: left;
+    font-size: 18px;
+    height: 31px;
+    margin-bottom: 0px;
+    padding-left: 0px;
+    padding-top: 5px;
+    width: 20px;
+}
+.scrtabs-tab-container {
+    height: 22px;
+}
+.nav-tabs {
+    border-bottom: 1px solid #ffffff;
+       margin: 0 0px; 
+}
+.nav-tabs>li>a {
+    margin-right: 2px;
+    line-height: 1.42857143;
+    border: 1px solid transparent;
+    border-radius: 4px 4px 0 0;
+    background: #eee;
+    color: #000;
+    font-family: monospace;
+     font-size: 17px; 
+   /*  line-height: 6px; */
+    margin: 0 2px;
+}
+a:focus, a:hover {
+    color: #23527c;
+    text-decoration: none;
+}
+.one1{
+    color: #9a2220;
+    text-decoration: none;
+    float: right;
+    margin: -3% 1%;
+    font-size: 23px;
+    }
+@media  (max-width:767px){
+.col-x-1 li{
+width:100%;
+text-align: center;
+margin-bottom: 5px;
+}
+.one1{
+    color: #9a2220;
+    text-decoration: none;
+      float: left;
+    margin: 0% 0%;
+    font-size: 23px;
+    }
+}
+
+
+</style> 
+
+  
+</head>
+
+<body>
+ 
+<div class="containe">
+  
+   <ul class="nav nav-tabs" role="tablist">
+      <li role="presentation" class="active"><a href="#Honda" role="tab" data-toggle="tab">Honda</a></li>
+      <li role="presentation"><a href="#TATA" role="tab" data-toggle="tab">TATA</a></li>
+      <li role="presentation"><a href="#Hyundai" role="tab" data-toggle="tab">Hyundai</a></li>
+      <li role="presentation"><a href="#Toyota" role="tab" data-toggle="tab">Toyota</a></li>
+      <li role="presentation"><a href="#Mahindra" role="tab" data-toggle="tab">Mahindra</a></li>
+      <li role="presentation"><a href="#Nissan" role="tab" data-toggle="tab">Nissan</a></li>
+      <li role="presentation"><a href="#Volkswagen" role="tab" data-toggle="tab">Volkswagen</a></li>
+      <li role="presentation"><a href="#Maruthi1" role="tab" data-toggle="tab">Maruthi Suzuki</a></li>
+      <li role="presentation"><a href="#Ford" role="tab" data-toggle="tab">Ford</a></li>
+      <li role="presentation"><a href="#Renault" role="tab" data-toggle="tab">Renault</a></li>
+      <li role="presentation"><a href="#Skoda" role="tab" data-toggle="tab">Skoda</a></li>
+      <li role="presentation"><a href="#Fiat" role="tab" data-toggle="tab">Fiat</a></li>
+      <li role="presentation"><a href="#Isuzu" role="tab" data-toggle="tab">Isuzu</a></li>
+      <li role="presentation"><a href="#Mitsubishi" role="tab" data-toggle="tab">Mitsubishi</a></li>
+      <li role="presentation"><a href="#Jeep" role="tab" data-toggle="tab">Jeep</a></li>
+      <li role="presentation"><a href="#BMW" role="tab" data-toggle="tab">BMW</a></li>
+      <li role="presentation"><a href="#Mercedes" role="tab" data-toggle="tab">Mercedes Benz</a></li>
+      <li role="presentation"><a href="#Volvo" role="tab" data-toggle="tab">Volvo</a></li>
+      <li role="presentation"><a href="#Porsche" role="tab" data-toggle="tab">Porsche</a></li>
+      <li role="presentation"><a href="#land1" role="tab" data-toggle="tab">Land Rover</a></li>
+      <li role="presentation"><a href="#jaguar" role="tab" data-toggle="tab">Jaguar</a></li>
+      <li role="presentation"><a href="#DC" role="tab" data-toggle="tab">DC</a></li>
+      <li role="presentation"><a href="#Bentley" role="tab" data-toggle="tab">Bentley</a></li>
+      <li role="presentation"><a href="#Mini" role="tab" data-toggle="tab">Mini</a></li>
+      <li role="presentation"><a href="#Lexus" role="tab" data-toggle="tab">Lexus</a></li>
+      <li role="presentation"><a href="#Force" role="tab" data-toggle="tab">Force Motors</a></li>  
+    </ul>
+    
+  <div class="tab-content">
+    <div role="tabpanel" class="tab-pane active" id="Honda">
+      <h3></h3>
+      
+         <div class="row">
+    <div class="col-md-12">
+      <div class="carousel carousel-showmanymoveone slide" id="carousel123">
+        <div class="carousel-inner" >
+          <div class="item">
+            <div class="col-xs-12 col-sm-6 col-md-3 f">
+             <div id="two">
+             <a href="#"><img alt="service" src="images/ho1.jpg" class="img-responsive"></a>
+              <div class="text3" style=" background: #fff; padding: 20px 5px 9px 7px;font-size:14px;">
+               <p style="text-align: center;"><span style="font-size:17px;color: #9a2220;">Model :</span><span style="font-size: 17px;">  City</span></p>
+               </div>
+            </div>
+          </div></div>
+                 
+          <div class="item">
+            <div class="col-xs-12 col-sm-6 col-md-3 f">
+             <div id="two" >
+            <a href="#"><img alt="service" src="images/ho2.jpg" class="img-responsive"></a>
+              <div class="text3" style="background: #fff; padding: 20px 5px 9px 7px; font-size: 14px;">
+               <p style="text-align: center;"><span style="font-size:17px;color: #9a2220;">Model :</span><span style="font-size: 17px;">  WR-V</span></p>
+               </div>
+               </div> </div></div>
+          
+          <div class="item">
+            <div class="col-xs-12 col-sm-6 col-md-3 f">
+             <div id="two">
+            <a href="#"><img alt="service" src="images/ho3.jpg" class="img-responsive"></a>
+              <div class="text3" style="background: #fff; padding: 20px 5px 9px 7px; font-size: 14px;">
+                <p style="text-align: center;"><span style="font-size:17px;color: #9a2220;">Model :</span><span style="font-size: 17px;">  Amaze</span></p>
+               </div>
+            </div></div></div>
+            
+             <div class="item">
+            <div class="col-xs-12 col-sm-6 col-md-3 f">
+             <div id="two">
+            <a href="#"><img alt="service" src="images/ho4.jpg" class="img-responsive"></a>
+              <div class="text3" style="background: #fff; padding: 20px 5px 9px 7px;font-size: 14px;">
+               <p style="text-align: center;"><span style="font-size:17px;color: #9a2220;">Model :</span><span style="font-size: 17px;">  Jazz</span></p>
+               </div>
+            </div></div></div>
+            
+            <div class="item">
+            <div class="col-xs-12 col-sm-6 col-md-3 f">
+             <div id="two">
+            <a href="#"><img alt="service" src="images/ho5.jpg" class="img-responsive"></a>
+              <div class="text3" style="background: #fff; padding: 20px 5px 9px 7px;font-size: 14px;">
+                <p style="text-align: center;"><span style="font-size:17px;color: #9a2220;">Model :</span><span style="font-size: 17px;">   Brio</span></p>
+
+               </div>
+            </div></div></div>
+            
+            <div class="item">
+            <div class="col-xs-12 col-sm-6 col-md-3 f">
+             <div id="two">
+            <a href="#"><img alt="service" src="images/ho6.jpg" class="img-responsive"></a>
+              <div class="text3" style="background: #fff; padding: 20px 5px 9px 7px;font-size: 14px;">
+               <p style="text-align: center;"><span style="font-size:17px;color: #9a2220;">Model :</span><span style="font-size: 17px;">  CR-V</span></p>
+               </div>
+            </div></div></div>
+            
+              <div class="item">
+            <div class="col-xs-12 col-sm-6 col-md-3 f">
+             <div id="two">
+            <a href="#"><img alt="service" src="images/ho8.jpg" class="img-responsive"></a>
+              <div class="text3" style="background: #fff; padding: 20px 5px 9px 7px;font-size: 14px;">
+               <p style="text-align: center;"><span style="font-size:17px;color: #9a2220;">Model :</span><span style="font-size: 17px;"> BR-V</span></p>
+               </div>
+            </div></div></div>
+            
+            <div class="item active">
+            <div class="col-xs-12 col-sm-6 col-md-3 f" >
+            <div id="two">
+            <a href="#"><img alt="service" src="images/ho7.jpg" class="img-responsive"></a>
+              <div class="text3" style="background: #fff; font-size: 14px; padding:20px 5px 9px 7px;">
+               <p style="text-align: center;"><span style="font-size:17px;color: #9a2220;">Model :</span><span style="font-size: 17px;">   Accord</span></p>
+               </div>
+            </div> </div></div>
+            
+        </div>
+        <a class="left carousel-control" href="#carousel123" data-slide="prev"><i class="glyphicon glyphicon-chevron-left a"></i></a>
+        <a class="right carousel-control" href="#carousel123" data-slide="next"><i class="glyphicon glyphicon-chevron-right a"></i></a>
+      </div>
+    </div>
+  </div>
+    </div>
+    
+    
+    <div id="TATA" class="tab-pane fade">
+      <h3></h3>
+            <div class="row">
+    <div class="col-md-12">
+      <div class="carousel carousel-showmanymoveone slide" id="carousel12">
+        <div class="carousel-inner" >
+          <div class="item active">
+            <div class="col-xs-12 col-sm-6 col-md-3 f">
+             <div id="two">
+             <a href="#"><img alt="service" src="images/ta1.jpg" class="img-responsive"></a>
+              <div class="text3" style=" background: #fff; padding: 20px 5px 9px 7px;font-size:14px;">
+               <p style="text-align: center;"><span style="font-size:17px;color: #9a2220;">Model :</span><span style="font-size: 17px;"> Tiago</span></p>
+               </div>
+            </div>
+          </div></div>
+                 
+          <div class="item">
+            <div class="col-xs-12 col-sm-6 col-md-3 f">
+             <div id="two" >
+            <a href="#"><img alt="service" src="images/ta2.jpg" class="img-responsive"></a>
+              <div class="text3" style="background: #fff;     padding: 20px 5px 9px 7px;font-size: 14px;">
+               <p style="text-align: center;"><span style="font-size:17px;color: #9a2220;">Model :</span><span style="font-size: 17px;"> Tigor</span></p>
+               </div>
+               </div> </div></div>
+          
+          <div class="item">
+            <div class="col-xs-12 col-sm-6 col-md-3 f">
+             <div id="two">
+            <a href="#"><img alt="service" src="images/ta3.jpg" class="img-responsive"></a>
+              <div class="text3" style="background: #fff; padding: 20px 5px 9px 7px; font-size: 14px;">
+             <p style="text-align: center;"><span style="font-size:17px;color: #9a2220;">Model :</span><span style="font-size: 17px;"> Bolt</span></p>
+               </div>
+            </div></div></div>
+            
+             <div class="item">
+            <div class="col-xs-12 col-sm-6 col-md-3 f">
+             <div id="two">
+            <a href="#"><img alt="service" src="images/ta4.jpg" class="img-responsive"></a>
+              <div class="text3" style="background: #fff; padding: 20px 5px 9px 7px;font-size: 14px;">
+                 <p style="text-align: center;"><span style="font-size:17px;color: #9a2220;">Model :</span><span style="font-size: 17px;"> Indica ev2</span></p>
+               </div>
+            </div></div></div>
+            
+            <div class="item">
+            <div class="col-xs-12 col-sm-6 col-md-3 f">
+             <div id="two">
+            <a href="#"><img alt="service" src="images/ta5.jpg" class="img-responsive"></a>
+              <div class="text3" style="background: #fff; padding: 20px 5px 9px 7px;font-size: 14px;">
+                 <p style="text-align: center;"><span style="font-size:17px;color: #9a2220;">Model :</span><span style="font-size: 17px;"> Zest</span></p>
+               </div>
+            </div></div></div>
+            
+            <div class="item">
+            <div class="col-xs-12 col-sm-6 col-md-3 f">
+             <div id="two">
+            <a href="#"><img alt="service" src="images/ta6.jpg" class="img-responsive"></a>
+              <div class="text3" style="background: #fff; padding: 20px 5px 9px 7px; font-size: 14px;">
+                 <p style="text-align: center;"><span style="font-size:17px;color: #9a2220;">Model :</span><span style="font-size: 17px;"> Hexa</span></p>
+               </div>
+            </div></div></div>
+            
+          <div class="item">
+            <div class="col-xs-12 col-sm-6 col-md-3 f" >
+            <div id="two">
+            <a href="#"><img alt="service" src="images/ta7.jpg" class="img-responsive"></a>
+              <div class="text3" style="background: #fff; font-size: 14px; padding:20px 5px 9px 7px;">
+              <p style="text-align: center;"><span style="font-size:17px;color: #9a2220;">Model :</span><span style="font-size: 17px;"> Safari Strome</span></p>
+               </div>
+            </div> </div></div>
+            
+             <div class="item">
+            <div class="col-xs-12 col-sm-6 col-md-3 f" >
+            <div id="two">
+            <a href="#"><img alt="service" src="images/ta8.jpg" class="img-responsive"></a>
+              <div class="text3" style="background: #fff; font-size: 14px; padding:20px 5px 9px 7px;">
+              <p style="text-align: center;"><span style="font-size:17px;color: #9a2220;">Model :</span><span style="font-size: 17px;"> Nano</span></p>
+               </div>
+            </div> </div></div>
+            
+             <div class="item">
+            <div class="col-xs-12 col-sm-6 col-md-3 f" >
+            <div id="two">
+            <a href="#"><img alt="service" src="images/ta9.jpg" class="img-responsive"></a>
+              <div class="text3" style="background: #fff; font-size: 14px; padding:20px 5px 9px 7px;">
+              <p style="text-align: center;"><span style="font-size:17px;color: #9a2220;">Model :</span><span style="font-size: 17px;"> Sumo Gold</span></p>
+               </div>
+            </div> </div></div>
+            
+             <div class="item">
+            <div class="col-xs-12 col-sm-6 col-md-3 f" >
+            <div id="two">
+            <a href="#"><img alt="service" src="images/ta10.jpg" class="img-responsive"></a>
+              <div class="text3" style="background: #fff; font-size: 14px; padding:20px 5px 9px 7px;">
+              <p style="text-align: center;"><span style="font-size:17px;color: #9a2220;">Model :</span><span style="font-size: 17px;"> Indica ecs</span></p>
+               </div>
+            </div> </div></div>
+            
+             <div class="item">
+            <div class="col-xs-12 col-sm-6 col-md-3 f" >
+            <div id="two">
+            <a href="#"><img alt="service" src="images/ta11.jpg" class="img-responsive"></a>
+              <div class="text3" style="background: #fff; font-size: 14px; padding:20px 5px 9px 7px;">
+              <p style="text-align: center;"><span style="font-size:17px;color: #9a2220;">Model :</span><span style="font-size: 17px;"> Nexon</span></p>
+               </div>
+            </div> </div></div>
+            
+        </div>
+        <a class="left carousel-control" href="#carousel12" data-slide="prev"><i class="glyphicon glyphicon-chevron-left a"></i></a>
+        <a class="right carousel-control" href="#carousel12" data-slide="next"><i class="glyphicon glyphicon-chevron-right a"></i></a>
+      </div>
+    </div>
+  </div>
+    </div>
+    
+    
+    <div id="Hyundai" class="tab-pane fade">
+     <h3></h3>
+        <div class="row">
+    <div class="col-md-12">
+      <div class="carousel carousel-showmanymoveone slide" id="carousel124">
+        <div class="carousel-inner" >
+          <div class="item active">
+            <div class="col-xs-12 col-sm-6 col-md-3 f">
+             <div id="two">
+             <a href="#"><img alt="service" src="images/hy1.jpg" class="img-responsive"></a>
+               <div class="text3" style=" background: #fff; padding: 20px 5px 9px 7px; font-size:14px;">
+              <p style="text-align: center;"><span style="font-size:17px;color: #9a2220;">Model :</span><span style="font-size: 17px;"> Creta</span></p> 
+               </div>
+            </div>
+          </div></div>
+                 
+          <div class="item">
+            <div class="col-xs-12 col-sm-6 col-md-3 f">
+             <div id="two" >
+            <a href="#"><img alt="service" src="images/hy2.jpg" class="img-responsive"></a>
+              <div class="text3" style="background: #fff;     padding: 20px 5px 9px 7px; font-size: 14px;">
+               <p style="text-align: center;"><span style="font-size:17px;color: #9a2220;">Model :</span><span style="font-size: 17px;"> Elitei20</span></p>
+               </div>
+               </div> </div></div>
+          
+          <div class="item">
+            <div class="col-xs-12 col-sm-6 col-md-3 f">
+             <div id="two">
+            <a href="#"><img alt="service" src="images/hy3.jpg" class="img-responsive"></a>
+              <div class="text3" style="background: #fff; padding: 20px 5px 9px 7px; font-size: 14px;">
+              <p style="text-align: center;"><span style="font-size:17px;color: #9a2220;">Model :</span><span style="font-size: 17px;"> Verna</span></p>
+               </div>
+            </div></div></div>
+            
+             <div class="item">
+            <div class="col-xs-12 col-sm-6 col-md-3 f">
+             <div id="two">
+            <a href="#"><img alt="service" src="images/hy4.jpg" class="img-responsive"></a>
+              <div class="text3" style="background: #fff; padding: 20px 5px 9px 7px; font-size: 14px;">
+              <p style="text-align: center;"><span style="font-size:17px;color: #9a2220;">Model :</span><span style="font-size: 17px;"> Eon</span></p>
+               </div>
+            </div></div></div>
+            
+             <div class="item">
+            <div class="col-xs-12 col-sm-6 col-md-3 f">
+             <div id="two">
+            <a href="#"><img alt="service" src="images/hy5.jpg" class="img-responsive"></a>
+              <div class="text3" style="background: #fff; padding: 20px 5px 9px 7px; font-size: 14px;">
+              <p style="text-align: center;"><span style="font-size:17px;color: #9a2220;">Model :</span><span style="font-size: 17px;"> Xcent</span></p>
+               </div>
+            </div></div></div>
+            
+             <div class="item">
+            <div class="col-xs-12 col-sm-6 col-md-3 f">
+             <div id="two">
+            <a href="#"><img alt="service" src="images/hy6.jpg" class="img-responsive"></a>
+              <div class="text3" style="background: #fff; padding: 20px 5px 9px 7px; font-size: 14px;">
+              <p style="text-align: center;"><span style="font-size:17px;color: #9a2220;">Model :</span><span style="font-size: 17px;"> i20 Active</span></p>
+               </div>
+            </div></div></div>
+            
+             <div class="item">
+            <div class="col-xs-12 col-sm-6 col-md-3 f">
+             <div id="two">
+            <a href="#"><img alt="service" src="images/hy7.jpg" class="img-responsive"></a>
+              <div class="text3" style="background: #fff; padding: 20px 5px 9px 7px; font-size: 14px;">
+              <p style="text-align: center;"><span style="font-size:17px;color: #9a2220;">Model :</span><span style="font-size: 17px;"> Tucson</span></p>
+               </div>
+            </div></div></div>
+            
+             <div class="item">
+            <div class="col-xs-12 col-sm-6 col-md-3 f">
+             <div id="two">
+            <a href="#"><img alt="service" src="images/hy8.jpg" class="img-responsive"></a>
+              <div class="text3" style="background: #fff; padding: 20px 5px 9px 7px; font-size: 14px;">
+              <p style="text-align: center;"><span style="font-size:17px;color: #9a2220;">Model :</span><span style="font-size: 17px;"> Elantra</span></p>
+               </div>
+            </div></div></div>
+            
+            
+        </div>
+        <a class="left carousel-control" href="#carousel124" data-slide="prev"><i class="glyphicon glyphicon-chevron-left a"></i></a>
+        <a class="right carousel-control" href="#carousel124" data-slide="next"><i class="glyphicon glyphicon-chevron-right a"></i></a>
+      </div>
+    </div>
+  </div> 
+    </div>
+    
+    <div id="Toyota" class="tab-pane fade">
+    <h3></h3>
+      <div class="row">
+    <div class="col-md-12">
+      <div class="carousel carousel-showmanymoveone slide" id="carousel1245">
+        <div class="carousel-inner" >
+          <div class="item active">
+            <div class="col-xs-12 col-sm-6 col-md-3 f">
+             <div id="two">
+             <a href="#"><img alt="service" src="images/to1.jpg" class="img-responsive"></a>
+              <div class="text3" style=" background: #fff; padding: 20px 5px 9px 7px;font-size:14px;">
+             <p style="text-align: center;"><span style="font-size:17px;color: #9a2220;">Model :</span><span style="font-size: 17px;"> Innovacrysta</span></p>
+               </div>
+            </div>
+          </div></div>
+                 
+          <div class="item">
+            <div class="col-xs-12 col-sm-6 col-md-3 f">
+             <div id="two" >
+            <a href="#"><img alt="service" src="images/to2.jpg" class="img-responsive"></a>
+              <div class="text3" style="background: #fff;     padding: 20px 5px 9px 7px; font-size: 14px;">
+                <p style="text-align: center;"><span style="font-size:17px;color: #9a2220;">Model :</span><span style="font-size: 17px;"> Fortuner</span></p>
+               </div>
+               </div> </div></div>
+          
+          <div class="item">
+            <div class="col-xs-12 col-sm-6 col-md-3 f">
+             <div id="two">
+            <a href="#"><img alt="service" src="images/to3.jpg" class="img-responsive"></a>
+              <div class="text3" style="background: #fff; padding: 20px 5px 9px 7px; font-size: 14px;">
+                  <p style="text-align: center;"><span style="font-size:17px;color: #9a2220;">Model :</span><span style="font-size: 17px;"> Etious Liva</span></p>
+               </div>
+            </div></div></div>
+            
+              <div class="item">
+            <div class="col-xs-12 col-sm-6 col-md-3 f">
+             <div id="two">
+            <a href="#"><img alt="service" src="images/to4.jpg" class="img-responsive"></a>
+              <div class="text3" style="background: #fff; padding: 20px 5px 9px 7px; font-size: 14px;">
+                  <p style="text-align: center;"><span style="font-size:17px;color: #9a2220;">Model :</span><span style="font-size: 17px;"> Corolla Altis</span></p>
+               </div>
+            </div></div></div>
+            
+              <div class="item">
+            <div class="col-xs-12 col-sm-6 col-md-3 f">
+             <div id="two">
+            <a href="#"><img alt="service" src="images/to5.jpg" class="img-responsive"></a>
+              <div class="text3" style="background: #fff; padding: 20px 5px 9px 7px; font-size: 14px;">
+                  <p style="text-align: center;"><span style="font-size:17px;color: #9a2220;">Model :</span><span style="font-size: 17px;"> Platinum Etious</span></p>
+               </div>
+            </div></div></div>
+            
+            <div class="item">
+            <div class="col-xs-12 col-sm-6 col-md-3 f">
+             <div id="two">
+            <a href="#"><img alt="service" src="images/to6.jpg" class="img-responsive"></a>
+              <div class="text3" style="background: #fff; padding: 20px 5px 9px 7px; font-size: 14px;">
+                  <p style="text-align: center;"><span style="font-size:17px;color: #9a2220;">Model :</span><span style="font-size: 17px;"> Camry</span></p>
+               </div>
+            </div></div></div>
+            
+            <div class="item">
+            <div class="col-xs-12 col-sm-6 col-md-3 f">
+             <div id="two">
+            <a href="#"><img alt="service" src="images/to7.jpg" class="img-responsive"></a>
+              <div class="text3" style="background: #fff; padding: 20px 5px 9px 7px; font-size: 14px;">
+                  <p style="text-align: center;"><span style="font-size:17px;color: #9a2220;">Model :</span><span style="font-size: 17px;"> Cruiser</span></p>
+               </div>
+            </div></div></div>
+            
+             <div class="item">
+            <div class="col-xs-12 col-sm-6 col-md-3 f">
+             <div id="two">
+            <a href="#"><img alt="service" src="images/to8.jpg" class="img-responsive"></a>
+              <div class="text3" style="background: #fff; padding: 20px 5px 9px 7px; font-size: 14px;">
+                  <p style="text-align: center;"><span style="font-size:17px;color: #9a2220;">Model :</span><span style="font-size: 17px;"> Etious Cross</span></p>
+               </div>
+            </div></div></div>
+            
+             <div class="item">
+            <div class="col-xs-12 col-sm-6 col-md-3 f">
+             <div id="two">
+            <a href="#"><img alt="service" src="images/to9.jpg" class="img-responsive"></a>
+              <div class="text3" style="background: #fff; padding: 20px 5px 9px 7px; font-size: 14px;">
+                  <p style="text-align: center;"><span style="font-size:17px;color: #9a2220;">Model :</span><span style="font-size: 17px;"> Prius</span></p>
+               </div>
+            </div></div></div>
+            
+            <div class="item">
+            <div class="col-xs-12 col-sm-6 col-md-3 f">
+             <div id="two">
+            <a href="#"><img alt="service" src="images/to10.jpg" class="img-responsive"></a>
+              <div class="text3" style="background: #fff; padding: 20px 5px 9px 7px; font-size: 14px;">
+                  <p style="text-align: center;"><span style="font-size:17px;color: #9a2220;">Model :</span><span style="font-size: 17px;"> Cruiser Prado</span></p>
+               </div>
+            </div></div></div>
+          
+           
+            
+        </div>
+        <a class="left carousel-control" href="#carousel1245" data-slide="prev"><i class="glyphicon glyphicon-chevron-left a"></i></a>
+        <a class="right carousel-control" href="#carousel1245" data-slide="next"><i class="glyphicon glyphicon-chevron-right a"></i></a>
+      </div>
+    </div>
+  </div> 
+    </div>
+    
+      <div id="Mahindra" class="tab-pane fade">
+      <h3></h3>
+      <div class="row">
+    <div class="col-md-12">
+      <div class="carousel carousel-showmanymoveone slide" id="carousel1240">
+        <div class="carousel-inner" >
+          <div class="item active">
+            <div class="col-xs-12 col-sm-6 col-md-3 f">
+             <div id="two">
+             <a href="#"><img alt="service" src="images/ma1.jpg" class="img-responsive"></a>
+              <div class="text3" style=" background: #fff; padding: 20px 5px 9px 7px;font-size:14px;">
+              <p style="text-align: center;"><span style="font-size:17px;color: #9a2220;">Model :</span><span style="font-size: 17px;"> KUV100 NXT</span></p>
+               </div>
+            </div>
+          </div></div>
+                 
+          <div class="item">
+            <div class="col-xs-12 col-sm-6 col-md-3 f">
+             <div id="two" >
+            <a href="#"><img alt="service" src="images/ma2.jpg" class="img-responsive"></a>
+              <div class="text3" style="background: #fff;     padding: 20px 5px 9px 7px; font-size: 14px;">
+              <p style="text-align: center;"><span style="font-size:17px;color: #9a2220;">Model :</span><span style="font-size: 17px;"> XUV500</span></p>
+               </div>
+               </div> </div></div>
+          
+          <div class="item">
+            <div class="col-xs-12 col-sm-6 col-md-3 f">
+             <div id="two">
+            <a href="#"><img alt="service" src="images/ma3.jpg" class="img-responsive"></a>
+              <div class="text3" style="background: #fff; padding: 20px 5px 9px 7px; font-size: 14px;">
+                 <p style="text-align: center;"><span style="font-size:17px;color: #9a2220;">Model :</span><span style="font-size: 17px;"> Scorpio</span></p>
+               </div>
+            </div></div></div>
+            
+             <div class="item">
+            <div class="col-xs-12 col-sm-6 col-md-3 f">
+             <div id="two">
+            <a href="#"><img alt="service" src="images/ma4.jpg" class="img-responsive"></a>
+              <div class="text3" style="background: #fff; padding: 20px 5px 9px 7px; font-size: 14px;">
+                 <p style="text-align: center;"><span style="font-size:17px;color: #9a2220;">Model :</span><span style="font-size: 17px;"> Scorpio Gateway</span></p>
+               </div>
+            </div></div></div>
+            
+             <div class="item">
+            <div class="col-xs-12 col-sm-6 col-md-3 f">
+             <div id="two">
+            <a href="#"><img alt="service" src="images/ma5.jpg" class="img-responsive"></a>
+              <div class="text3" style="background: #fff; padding: 20px 5px 9px 7px; font-size: 14px;">
+                 <p style="text-align: center;"><span style="font-size:17px;color: #9a2220;">Model :</span><span style="font-size: 17px;"> Bolero</span></p>
+               </div>
+            </div></div></div>
+            
+             <div class="item">
+            <div class="col-xs-12 col-sm-6 col-md-3 f">
+             <div id="two">
+            <a href="#"><img alt="service" src="images/ma6.jpg" class="img-responsive"></a>
+              <div class="text3" style="background: #fff; padding: 20px 5px 9px 7px; font-size: 14px;">
+                 <p style="text-align: center;"><span style="font-size:17px;color: #9a2220;">Model :</span><span style="font-size: 17px;"> Verito</span></p>
+               </div>
+            </div></div></div>
+            
+            <div class="item">
+            <div class="col-xs-12 col-sm-6 col-md-3 f">
+             <div id="two">
+            <a href="#"><img alt="service" src="images/ma7.jpg" class="img-responsive"></a>
+              <div class="text3" style="background: #fff; padding: 20px 5px 9px 7px; font-size: 14px;">
+                 <p style="text-align: center;"><span style="font-size:17px;color: #9a2220;">Model :</span><span style="font-size: 17px;"> TUV300</span></p>
+               </div>
+            </div></div></div>
+            
+            <div class="item">
+            <div class="col-xs-12 col-sm-6 col-md-3 f">
+             <div id="two">
+            <a href="#"><img alt="service" src="images/ma8.jpg" class="img-responsive"></a>
+              <div class="text3" style="background: #fff; padding: 20px 5px 9px 7px; font-size: 14px;">
+                 <p style="text-align: center;"><span style="font-size:17px;color: #9a2220;">Model :</span><span style="font-size: 17px;"> e2o</span></p>
+               </div>
+            </div></div></div>
+            
+              <div class="item">
+            <div class="col-xs-12 col-sm-6 col-md-3 f">
+             <div id="two">
+            <a href="#"><img alt="service" src="images/ma9.jpg" class="img-responsive"></a>
+              <div class="text3" style="background: #fff; padding: 20px 5px 9px 7px; font-size: 14px;">
+                 <p style="text-align: center;"><span style="font-size:17px;color: #9a2220;">Model :</span><span style="font-size: 17px;"> Nuvo Sport</span></p>
+               </div>
+            </div></div></div>
+            
+              <div class="item">
+            <div class="col-xs-12 col-sm-6 col-md-3 f">
+             <div id="two">
+            <a href="#"><img alt="service" src="images/ma10.jpg" class="img-responsive"></a>
+              <div class="text3" style="background: #fff; padding: 20px 5px 9px 7px; font-size: 14px;">
+                 <p style="text-align: center;"><span style="font-size:17px;color: #9a2220;">Model :</span><span style="font-size: 17px;"> VeritoVibe</span></p>
+               </div>
+            </div></div></div>
+            
+             <div class="item">
+            <div class="col-xs-12 col-sm-6 col-md-3 f">
+             <div id="two">
+            <a href="#"><img alt="service" src="images/ma11.jpg" class="img-responsive"></a>
+              <div class="text3" style="background: #fff; padding: 20px 5px 9px 7px; font-size: 14px;">
+                 <p style="text-align: center;"><span style="font-size:17px;color: #9a2220;">Model :</span><span style="font-size: 17px;"> Xylo</span></p>
+               </div>
+            </div></div></div>
+            
+             <div class="item">
+            <div class="col-xs-12 col-sm-6 col-md-3 f">
+             <div id="two">
+            <a href="#"><img alt="service" src="images/ma12.jpg" class="img-responsive"></a>
+              <div class="text3" style="background: #fff; padding: 20px 5px 9px 7px; font-size: 14px;">
+                 <p style="text-align: center;"><span style="font-size:17px;color: #9a2220;">Model :</span><span style="font-size: 17px;"> Thar</span></p>
+               </div>
+            </div></div></div>
+            
+         
+           
+            
+        </div>
+        <a class="left carousel-control" href="#carousel1240" data-slide="prev"><i class="glyphicon glyphicon-chevron-left a"></i></a>
+        <a class="right carousel-control" href="#carousel1240" data-slide="next"><i class="glyphicon glyphicon-chevron-right a"></i></a>
+      </div>
+    </div>
+     </div> 
+      </div>
+       
+       
+      <div id="Nissan" class="tab-pane fade">
+      <h3></h3>
+       <div class="row">
+    <div class="col-md-12">
+      <div class="carousel carousel-showmanymoveone slide" id="carousel1241">
+        <div class="carousel-inner" >
+          <div class="item active">
+            <div class="col-xs-12 col-sm-6 col-md-3 f">
+             <div id="two">
+             <a href="#"><img alt="service" src="images/ni1.jpg" class="img-responsive"></a>
+              <div class="text3" style=" background: #fff; padding: 20px 5px 9px 7px;  font-size:14px;"> 
+              <p style="text-align: center;">
+             <span style="font-size:17px;color: #9a2220;">Model :</span><span style="font-size: 17px;"> Micra Active</span></p>
+               </div>
+            </div>
+          </div></div>
+                 
+          <div class="item">
+            <div class="col-xs-12 col-sm-6 col-md-3 f">
+             <div id="two" >
+            <a href="#"><img alt="service" src="images/ni2.jpg" class="img-responsive"></a>
+              <div class="text3" style="background: #fff;     padding: 20px 5px 9px 7px; font-size: 14px;">
+                <p style="text-align: center;"><span style="font-size:17px;color: #9a2220;">Model :</span><span style="font-size: 17px;"> Micra</span></p>
+               </div>
+               </div> </div></div>
+          
+          <div class="item">
+            <div class="col-xs-12 col-sm-6 col-md-3 f">
+             <div id="two">
+            <a href="#"><img alt="service" src="images/ni3.jpg" class="img-responsive"></a>
+              <div class="text3" style="background: #fff; padding: 20px 5px 9px 7px; font-size: 14px;">
+                  <p style="text-align: center;"><span style="font-size:17px;color: #9a2220;">Model :</span><span style="font-size: 17px;"> Terrano</span></p>
+               </div>
+            </div></div></div>
+            
+              <div class="item">
+            <div class="col-xs-12 col-sm-6 col-md-3 f">
+             <div id="two">
+            <a href="#"><img alt="service" src="images/ni4.jpg" class="img-responsive"></a>
+              <div class="text3" style="background: #fff; padding: 20px 5px 9px 7px; font-size: 14px;">
+                  <p style="text-align: center;"><span style="font-size:17px;color: #9a2220;">Model :</span><span style="font-size: 17px;"> Sunny</span></p>
+               </div>
+            </div></div></div>
+            
+             <div class="item">
+            <div class="col-xs-12 col-sm-6 col-md-3 f">
+             <div id="two">
+            <a href="#"><img alt="service" src="images/ni5.jpg" class="img-responsive"></a>
+              <div class="text3" style="background: #fff; padding: 20px 5px 9px 7px; font-size: 14px;">
+                  <p style="text-align: center;"><span style="font-size:17px;color: #9a2220;">Model :</span><span style="font-size: 17px;"> GT-R</span></p>
+               </div>
+            </div></div></div>
+            
+            
+            
+         
+        </div>
+        <a class="left carousel-control" href="#carousel1241" data-slide="prev"><i class="glyphicon glyphicon-chevron-left a"></i></a>
+        <a class="right carousel-control" href="#carousel1241" data-slide="next"><i class="glyphicon glyphicon-chevron-right a"></i></a>
+      </div>
+    </div>
+     </div> 
+      </div>
+      
+   <!-- ---------------------------------------------------  volkswagen --------------------------------- -->   
+      <div id="Volkswagen" class="tab-pane fade">
+      <h3></h3>
+       <div class="row">
+    <div class="col-md-12">
+      <div class="carousel carousel-showmanymoveone slide" id="carousel12411">
+        <div class="carousel-inner" >
+          <div class="item active">
+            <div class="col-xs-12 col-sm-6 col-md-3 f">
+             <div id="two">
+             <a href="#"><img alt="service" src="images/vo1.jpg" class="img-responsive"></a>
+              <div class="text3" style=" background: #fff; padding: 20px 5px 9px 7px; font-size:14px;">
+             <p style="text-align: center;"><span style="font-size:17px;color: #9a2220;">Model :</span><span style="font-size: 17px;"> Polo</span></p>
+               </div>
+            </div>
+          </div></div>
+                 
+          <div class="item">
+            <div class="col-xs-12 col-sm-6 col-md-3 f">
+             <div id="two" >
+            <a href="#"><img alt="service" src="images/vo2.jpg" class="img-responsive"></a>
+              <div class="text3" style="background: #fff;     padding: 20px 5px 9px 7px; font-size: 14px;">
+                <p style="text-align: center;"><span style="font-size:17px;color: #9a2220;">Model :</span><span style="font-size: 17px;"> Ameo</span></p>
+               </div>
+               </div> </div></div>
+          
+          <div class="item">
+            <div class="col-xs-12 col-sm-6 col-md-3 f">
+             <div id="two">
+            <a href="#"><img alt="service" src="images/vo3.jpg" class="img-responsive"></a>
+              <div class="text3" style="background: #fff; padding: 20px 5px 9px 7px; font-size: 14px;">
+                  <p style="text-align: center;"><span style="font-size:17px;color: #9a2220;">Model :</span><span style="font-size: 17px;"> Vento</span></p>
+               </div>
+            </div></div></div>
+            
+             <div class="item">
+            <div class="col-xs-12 col-sm-6 col-md-3 f">
+             <div id="two">
+            <a href="#"><img alt="service" src="images/vo4.jpg" class="img-responsive"></a>
+              <div class="text3" style="background: #fff; padding: 20px 5px 9px 7px; font-size: 14px;">
+                  <p style="text-align: center;"><span style="font-size:17px;color: #9a2220;">Model :</span><span style="font-size: 17px;"> Tiguan</span></p>
+               </div>
+            </div></div></div>
+            
+            
+             <div class="item">
+            <div class="col-xs-12 col-sm-6 col-md-3 f">
+             <div id="two">
+            <a href="#"><img alt="service" src="images/vo6.jpg" class="img-responsive"></a>
+              <div class="text3" style="background: #fff; padding: 20px 5px 9px 7px; font-size: 14px;">
+                  <p style="text-align: center;"><span style="font-size:17px;color: #9a2220;">Model :</span><span style="font-size: 17px;"> Passat</span></p>
+               </div>
+            </div></div></div>
+            
+            <div class="item">
+            <div class="col-xs-12 col-sm-6 col-md-3 f">
+             <div id="two">
+            <a href="#"><img alt="service" src="images/vo7.jpg" class="img-responsive"></a>
+              <div class="text3" style="background: #fff; padding: 20px 5px 9px 7px; font-size: 14px;">
+                  <p style="text-align: center;"><span style="font-size:17px;color: #9a2220;">Model :</span><span style="font-size: 17px;"> GTI</span></p>
+               </div>
+            </div></div></div>
+            
+          
+            
+        </div>
+        <a class="left carousel-control" href="#carousel12411" data-slide="prev"><i class="glyphicon glyphicon-chevron-left a"></i></a>
+        <a class="right carousel-control" href="#carousel12411" data-slide="next"><i class="glyphicon glyphicon-chevron-right a"></i></a>
+      </div>
+    </div>
+     </div> 
+      </div>
+    
+    <!-- ---------------------------------------------------  end volkswagen --------------------------------- -->   
+      
+     <!-- ---------------------------------------------------  Maruti --------------------------------- -->    
+      <div id="Maruthi1" class="tab-pane fade">
+      <h3></h3>
+       <div class="row">
+    <div class="col-md-12">
+      <div class="carousel carousel-showmanymoveone slide" id="carousel12419">
+        <div class="carousel-inner" >
+          <div class="item active">
+            <div class="col-xs-12 col-sm-6 col-md-3 f">
+             <div id="two">
+             <a href="#"><img alt="service" src="images/ms1.jpg" class="img-responsive"></a>
+              <div class="text3" style=" background: #fff; padding: 20px 5px 9px 7px;  font-size:14px;"> 
+            <p style="text-align: center;"><span style="font-size:17px;color: #9a2220;">Model :</span><span style="font-size: 17px;"> Swift</span></p>
+               </div>
+            </div>
+          </div></div>
+                 
+          <div class="item">
+            <div class="col-xs-12 col-sm-6 col-md-3 f">
+             <div id="two" >
+            <a href="#"><img alt="service" src="images/ms2.jpg" class="img-responsive"></a>
+              <div class="text3" style="background: #fff;     padding: 20px 5px 9px 7px; font-size: 14px;">
+                <p style="text-align: center;"><span style="font-size:17px;color: #9a2220;">Model :</span><span style="font-size: 17px;"> Dzire</span></p>
+               </div>
+               </div> </div></div>
+          
+          <div class="item">
+            <div class="col-xs-12 col-sm-6 col-md-3 f">
+             <div id="two">
+            <a href="#"><img alt="service" src="images/ms3.jpg" class="img-responsive"></a>
+              <div class="text3" style="background: #fff; padding: 20px 5px 9px 7px;font-size: 14px;">
+                  <p style="text-align: center;"><span style="font-size:17px;color: #9a2220;">Model :</span><span style="font-size: 17px;"> Baleno</span></p>
+               </div>
+            </div></div></div>
+            
+             <div class="item">
+            <div class="col-xs-12 col-sm-6 col-md-3 f">
+             <div id="two">
+            <a href="#"><img alt="service" src="images/ms4.jpg" class="img-responsive"></a>
+              <div class="text3" style="background: #fff; padding: 20px 5px 9px 7px;font-size: 14px;">
+                  <p style="text-align: center;"><span style="font-size:17px;color: #9a2220;">Model :</span><span style="font-size: 17px;"> Vitara Brezza</span></p>
+               </div>
+            </div></div></div>
+            
+             <div class="item">
+            <div class="col-xs-12 col-sm-6 col-md-3 f">
+             <div id="two">
+            <a href="#"><img alt="service" src="images/ms5.jpg" class="img-responsive"></a>
+              <div class="text3" style="background: #fff; padding: 20px 5px 9px 7px;font-size: 14px;">
+                  <p style="text-align: center;"><span style="font-size:17px;color: #9a2220;">Model :</span><span style="font-size: 17px;"> Alto800</span></p>
+               </div>
+            </div></div></div>
+            
+             <div class="item">
+            <div class="col-xs-12 col-sm-6 col-md-3 f">
+             <div id="two">
+            <a href="#"><img alt="service" src="images/ms6.jpg" class="img-responsive"></a>
+              <div class="text3" style="background: #fff; padding: 20px 5px 9px 7px;font-size: 14px;">
+                  <p style="text-align: center;"><span style="font-size:17px;color: #9a2220;">Model :</span><span style="font-size: 17px;"> Ertiga</span></p>
+               </div>
+            </div></div></div>
+            
+             <div class="item">
+            <div class="col-xs-12 col-sm-6 col-md-3 f">
+             <div id="two">
+            <a href="#"><img alt="service" src="images/ms7.jpg" class="img-responsive"></a>
+              <div class="text3" style="background: #fff; padding: 20px 5px 9px 7px;font-size: 14px;">
+                  <p style="text-align: center;"><span style="font-size:17px;color: #9a2220;">Model :</span><span style="font-size: 17px;"> Wagon R 1.0</span></p>
+               </div>
+            </div></div></div>
+            
+             <div class="item">
+            <div class="col-xs-12 col-sm-6 col-md-3 f">
+             <div id="two">
+            <a href="#"><img alt="service" src="images/ms8.jpg" class="img-responsive"></a>
+              <div class="text3" style="background: #fff; padding: 20px 5px 9px 7px;font-size: 14px;">
+                  <p style="text-align: center;"><span style="font-size:17px;color: #9a2220;">Model :</span><span style="font-size: 17px;">  S Cross</span></p>
+               </div>
+            </div></div></div>
+            
+             <div class="item">
+            <div class="col-xs-12 col-sm-6 col-md-3 f">
+             <div id="two">
+            <a href="#"><img alt="service" src="images/ms9.jpg" class="img-responsive"></a>
+              <div class="text3" style="background: #fff; padding: 20px 5px 9px 7px;font-size: 14px;">
+                  <p style="text-align: center;"><span style="font-size:17px;color: #9a2220;">Model :</span><span style="font-size: 17px;">  Celerio</span></p>
+               </div>
+            </div></div></div>
+            
+            
+             <div class="item">
+            <div class="col-xs-12 col-sm-6 col-md-3 f">
+             <div id="two">
+            <a href="#"><img alt="service" src="images/ms10.jpg" class="img-responsive"></a>
+              <div class="text3" style="background: #fff; padding: 20px 5px 9px 7px;font-size: 14px;">
+                  <p style="text-align: center;"><span style="font-size:17px;color: #9a2220;">Model :</span><span style="font-size: 17px;">  Ciaz</span></p>
+               </div>
+            </div></div></div>
+            
+             <div class="item">
+            <div class="col-xs-12 col-sm-6 col-md-3 f">
+             <div id="two">
+            <a href="#"><img alt="service" src="images/ms11.jpg" class="img-responsive"></a>
+              <div class="text3" style="background: #fff; padding: 20px 5px 9px 7px;font-size: 14px;">
+                  <p style="text-align: center;"><span style="font-size:17px;color: #9a2220;">Model :</span><span style="font-size: 17px;">  Alto K10</span></p>
+               </div>
+            </div></div></div>
+            
+             <div class="item">
+            <div class="col-xs-12 col-sm-6 col-md-3 f">
+             <div id="two">
+            <a href="#"><img alt="service" src="images/ms12.jpg" class="img-responsive"></a>
+              <div class="text3" style="background: #fff; padding: 20px 5px 9px 7px;font-size: 14px;">
+                  <p style="text-align: center;"><span style="font-size:17px;color: #9a2220;">Model :</span><span style="font-size: 17px;">  Ignis</span></p>
+               </div>
+            </div></div></div>
+            
+               <div class="item">
+            <div class="col-xs-12 col-sm-6 col-md-3 f">
+             <div id="two">
+            <a href="#"><img alt="service" src="images/ms13.jpg" class="img-responsive"></a>
+              <div class="text3" style="background: #fff; padding: 20px 5px 9px 7px;font-size: 14px;">
+                  <p style="text-align: center;"><span style="font-size:17px;color: #9a2220;">Model :</span><span style="font-size: 17px;">  Celerio X</span></p>
+               </div>
+            </div></div></div>
+            
+               <div class="item">
+            <div class="col-xs-12 col-sm-6 col-md-3 f">
+             <div id="two">
+            <a href="#"><img alt="service" src="images/ms14.jpg" class="img-responsive"></a>
+              <div class="text3" style="background: #fff; padding: 20px 5px 9px 7px;font-size: 14px;">
+                  <p style="text-align: center;"><span style="font-size:17px;color: #9a2220;">Model :</span><span style="font-size: 17px;">  Omni</span></p>
+               </div>
+            </div></div></div>
+            
+             <div class="item">
+            <div class="col-xs-12 col-sm-6 col-md-3 f">
+             <div id="two">
+            <a href="#"><img alt="service" src="images/ms15.jpg" class="img-responsive"></a>
+              <div class="text3" style="background: #fff; padding: 20px 5px 9px 7px;font-size: 14px;">
+                  <p style="text-align: center;"><span style="font-size:17px;color: #9a2220;">Model :</span><span style="font-size: 17px;">  Eeco</span></p>
+               </div>
+            </div></div></div>
+            
+             <div class="item">
+            <div class="col-xs-12 col-sm-6 col-md-3 f">
+             <div id="two">
+            <a href="#"><img alt="service" src="images/ms16.jpg" class="img-responsive"></a>
+              <div class="text3" style="background: #fff; padding: 20px 5px 9px 7px;font-size: 14px;">
+                  <p style="text-align: center;"><span style="font-size:17px;color: #9a2220;">Model :</span><span style="font-size: 17px;">  Gypsy</span></p>
+               </div>
+            </div></div></div>
+           
+            
+        </div>
+        <a class="left carousel-control" href="#carousel12419" data-slide="prev"><i class="glyphicon glyphicon-chevron-left a"></i></a>
+        <a class="right carousel-control" href="#carousel12419" data-slide="next"><i class="glyphicon glyphicon-chevron-right a"></i></a>
+      </div>
+    </div>
+     </div> 
+      </div>
+       <!-- ---------------------------------------------------  end Maruti --------------------------------- --> 
+       
+        <!-- ---------------------------------------------------  Ford --------------------------------- -->    
+      <div id="Ford" class="tab-pane fade">
+      <h3></h3>
+      <div class="row">
+    <div class="col-md-12">
+      <div class="carousel carousel-showmanymoveone slide" id="carousel129">
+        <div class="carousel-inner" >
+          <div class="item active">
+            <div class="col-xs-12 col-sm-6 col-md-3 f">
+             <div id="two">
+             <a href="#"><img alt="service" src="images/fo1.jpg" class="img-responsive"></a>
+              <div class="text3" style=" background: #fff; padding: 20px 5px 9px 7px; font-size:14px;">
+             <p style="text-align: center;"><span style="font-size:17px;color: #9a2220;">Model :</span><span style="font-size: 17px;">  Figo Aspire</span></p>
+               </div>
+            </div>
+          </div></div>
+                 
+          <div class="item">
+            <div class="col-xs-12 col-sm-6 col-md-3 f">
+             <div id="two" >
+            <a href="#"><img alt="service" src="images/fo2.jpg" class="img-responsive"></a>
+              <div class="text3" style="background: #fff;     padding: 20px 5px 9px 7px; font-size: 14px;">
+                <p style="text-align: center;"><span style="font-size:17px;color: #9a2220;">Model :</span><span style="font-size: 17px;">  Figo</span></p>
+               </div>
+               </div> </div></div>
+          
+          <div class="item">
+            <div class="col-xs-12 col-sm-6 col-md-3 f">
+             <div id="two">
+            <a href="#"><img alt="service" src="images/fo3.jpg" class="img-responsive"></a>
+              <div class="text3" style="background: #fff; padding: 20px 5px 9px 7px; font-size: 14px;">
+                  <p style="text-align: center;"><span style="font-size:17px;color: #9a2220;">Model :</span><span style="font-size: 17px;">  Endeavour</span></p>
+               </div>
+            </div></div></div>
+            
+              <div class="item">
+            <div class="col-xs-12 col-sm-6 col-md-3 f">
+             <div id="two">
+            <a href="#"><img alt="service" src="images/fo4.jpg" class="img-responsive"></a>
+              <div class="text3" style="background: #fff; padding: 20px 5px 9px 7px; font-size: 14px;">
+                  <p style="text-align: center;"><span style="font-size:17px;color: #9a2220;">Model :</span><span style="font-size: 17px;">  Eco Sport</span></p>
+               </div>
+            </div></div></div>
+            
+            
+              <div class="item">
+            <div class="col-xs-12 col-sm-6 col-md-3 f">
+             <div id="two">
+            <a href="#"><img alt="service" src="images/fo5.jpg" class="img-responsive"></a>
+              <div class="text3" style="background: #fff; padding: 20px 5px 9px 7px; font-size: 14px;">
+                  <p style="text-align: center;"><span style="font-size:17px;color: #9a2220;">Model :</span><span style="font-size: 17px;">  Mustang</span></p>
+               </div>
+            </div></div></div>
+            
+           
+            
+        </div>
+        <a class="left carousel-control" href="#carousel129" data-slide="prev"><i class="glyphicon glyphicon-chevron-left a"></i></a>
+        <a class="right carousel-control" href="#carousel129" data-slide="next"><i class="glyphicon glyphicon-chevron-right a"></i></a>
+      </div>
+    </div>
+     </div> 
+      </div>
+       <!-- ---------------------------------------------------  end Ford --------------------------------- --> 
+       
+        <!-- ---------------------------------------------------  Renault --------------------------------- -->    
+      <div id="Renault" class="tab-pane fade">
+      <h3></h3>
+      <div class="row">
+    <div class="col-md-12">
+      <div class="carousel carousel-showmanymoveone slide" id="carousel21">
+        <div class="carousel-inner" >
+          <div class="item active">
+            <div class="col-xs-12 col-sm-6 col-md-3 f">
+             <div id="two">
+             <a href="#"><img alt="service" src="images/re1.jpg" class="img-responsive"></a>
+              <div class="text3" style=" background: #fff; padding: 20px 5px 9px 7px;font-size:14px;">
+             <p style="text-align: center;"><span style="font-size:17px;color: #9a2220;">Model :</span><span style="font-size: 17px;">  Duster</span></p>
+               </div>
+            </div>
+          </div></div>
+                 
+          <div class="item">
+            <div class="col-xs-12 col-sm-6 col-md-3 f">
+             <div id="two" >
+            <a href="#"><img alt="service" src="images/re2.jpg" class="img-responsive"></a>
+              <div class="text3" style="background: #fff; padding: 20px 5px 9px 7px;font-size: 14px;">
+                <p style="text-align: center;"><span style="font-size:17px;color: #9a2220;">Model :</span><span style="font-size: 17px;">  Kwid</span></p>
+               </div>
+               </div> </div></div>
+          
+          
+          <div class="item">
+            <div class="col-xs-12 col-sm-6 col-md-3 f">
+             <div id="two" >
+            <a href="#"><img alt="service" src="images/re2.jpg" class="img-responsive"></a>
+              <div class="text3" style="background: #fff; padding: 20px 5px 9px 7px;font-size: 14px;">
+                <p style="text-align: center;"><span style="font-size:17px;color: #9a2220;">Model :</span><span style="font-size: 17px;">  Lodgy</span></p>
+               </div>
+               </div> </div></div>
+            
+            <div class="item">
+            <div class="col-xs-12 col-sm-6 col-md-3 f">
+             <div id="two" >
+            <a href="#"><img alt="service" src="images/re4.jpg" class="img-responsive"></a>
+              <div class="text3" style="background: #fff; padding: 20px 5px 9px 7px;font-size: 14px;">
+                <p style="text-align: center;"><span style="font-size:17px;color: #9a2220;">Model :</span><span style="font-size: 17px;">  Captur</span></p>
+               </div>
+               </div> </div></div>
+            
+           
+            
+        </div>
+        <a class="left carousel-control" href="#carousel21" data-slide="prev"><i class="glyphicon glyphicon-chevron-left a"></i></a>
+        <a class="right carousel-control" href="#carousel21" data-slide="next"><i class="glyphicon glyphicon-chevron-right a"></i></a>
+      </div>
+    </div>
+     </div> 
+      </div>
+       <!-- ---------------------------------------------------  end Renault --------------------------------- -->
+       
+         <!-- ---------------------------------------------------  Skoda --------------------------------- -->    
+      <div id="Skoda" class="tab-pane fade">
+      <h3></h3>
+       <div class="row">
+    <div class="col-md-12">
+      <div class="carousel carousel-showmanymoveone slide" id="carousel212">
+        <div class="carousel-inner" >
+          <div class="item active">
+            <div class="col-xs-12 col-sm-6 col-md-3 f">
+             <div id="two">
+             <a href="#"><img alt="service" src="images/sk1.jpg" class="img-responsive"></a>
+              <div class="text3" style=" background: #fff; padding: 20px 5px 9px 7px; font-size:14px;"> 
+             <p style="text-align: center;"><span style="font-size:17px;color: #9a2220;">Model :</span><span style="font-size: 17px;">  Rapid</span></p>
+               </div>
+            </div>
+          </div></div>
+                 
+          <div class="item">
+            <div class="col-xs-12 col-sm-6 col-md-3 f">
+             <div id="two" >
+            <a href="#"><img alt="service" src="images/sk2.jpg" class="img-responsive"></a>
+              <div class="text3" style="background: #fff; padding: 20px 5px 9px 7px; font-size: 14px;">
+                 <p style="text-align: center;"><span style="font-size:17px;color: #9a2220;">Model :</span><span style="font-size: 17px;">  Octiva</span></p>
+               </div>
+               </div> </div></div>
+               
+                <div class="item">
+            <div class="col-xs-12 col-sm-6 col-md-3 f">
+             <div id="two" >
+            <a href="#"><img alt="service" src="images/sk2.jpg" class="img-responsive"></a>
+              <div class="text3" style="background: #fff; padding: 20px 5px 9px 7px; font-size: 14px;">
+                 <p style="text-align: center;"><span style="font-size:17px;color: #9a2220;">Model :</span><span style="font-size: 17px;">  Superb</span></p>
+               </div>
+               </div> </div></div>
+          
+            <div class="item">
+            <div class="col-xs-12 col-sm-6 col-md-3 f">
+             <div id="two" >
+            <a href="#"><img alt="service" src="images/sk2.jpg" class="img-responsive"></a>
+              <div class="text3" style="background: #fff; padding: 20px 5px 9px 7px; font-size: 14px;">
+                 <p style="text-align: center;"><span style="font-size:17px;color: #9a2220;">Model :</span><span style="font-size: 17px;">  kodiaq</span></p>
+               </div>
+               </div> </div></div>
+            
+             
+            
+        </div>
+        <a class="left carousel-control" href="#carousel212" data-slide="prev"><i class="glyphicon glyphicon-chevron-left a"></i></a>
+        <a class="right carousel-control" href="#carousel212" data-slide="next"><i class="glyphicon glyphicon-chevron-right a"></i></a>
+      </div>
+    </div>
+     </div> 
+      </div>
+       <!-- ---------------------------------------------------  end Skoda --------------------------------- -->
+       
+       
+         <!-- ---------------------------------------------------  Fiat --------------------------------- -->    
+      <div id="Fiat" class="tab-pane fade">
+      <h3></h3>
+       <div class="row">
+    <div class="col-md-12">
+      <div class="carousel carousel-showmanymoveone slide" id="carousel213">
+        <div class="carousel-inner" >
+          <div class="item active">
+            <div class="col-xs-12 col-sm-6 col-md-3 f">
+             <div id="two">
+             <a href="#"><img alt="service" src="images/fi1.jpg" class="img-responsive"></a>
+              <div class="text3" style=" background: #fff; padding: 20px 5px 9px 7px;  font-size:14px;">
+               <p style="text-align: center;"><span style="font-size:17px;color: #9a2220;">Model :</span><span style="font-size: 17px;">  Punto Evo</span></p>
+               </div>
+            </div>
+          </div></div>
+                 
+          <div class="item">
+            <div class="col-xs-12 col-sm-6 col-md-3 f">
+             <div id="two" >
+            <a href="#"><img alt="service" src="images/fi2.jpg" class="img-responsive"></a>
+              <div class="text3" style="background: #fff; padding: 20px 5px 9px 7px;font-size: 14px;">
+               <p style="text-align: center;"><span style="font-size:17px;color: #9a2220;">Model :</span><span style="font-size: 17px;">  Linea</span></p>
+               </div>
+               </div> </div></div>
+          
+          <div class="item">
+            <div class="col-xs-12 col-sm-6 col-md-3 f">
+             <div id="two">
+            <a href="#"><img alt="service" src="images/fi3.jpg" class="img-responsive"></a>
+              <div class="text3" style="background: #fff; padding: 20px 5px 9px 7px;font-size: 14px;">
+                 <p style="text-align: center;"><span style="font-size:17px;color: #9a2220;">Model :</span><span style="font-size: 17px;">  Urban Cross</span></p>
+               </div>
+            </div></div></div>
+            
+             <div class="item">
+            <div class="col-xs-12 col-sm-6 col-md-3 f">
+             <div id="two">
+            <a href="#"><img alt="service" src="images/fi4.jpg" class="img-responsive"></a>
+              <div class="text3" style="background: #fff; padding: 20px 5px 9px 7px; font-size: 14px;">
+              <p style="text-align: center;"><span style="font-size:17px;color: #9a2220;">Model :</span><span style="font-size: 17px;"> Avventura</span></p>
+               </div>
+            </div></div></div>
+            
+            <div class="item">
+            <div class="col-xs-12 col-sm-6 col-md-3 f">
+             <div id="two">
+            <a href="#"><img alt="service" src="images/fi5.jpg" class="img-responsive"></a>
+              <div class="text3" style="background: #fff; padding: 20px 5px 9px 7px; font-size: 14px;">
+              <p style="text-align: center;"><span style="font-size:17px;color: #9a2220;">Model :</span><span style="font-size: 17px;"> Abarth Punto</span></p>
+               </div>
+            </div></div></div>
+            
+        </div>
+        <a class="left carousel-control" href="#carousel213" data-slide="prev"><i class="glyphicon glyphicon-chevron-left a"></i></a>
+        <a class="right carousel-control" href="#carousel213" data-slide="next"><i class="glyphicon glyphicon-chevron-right a"></i></a>
+      </div>
+    </div>
+     </div> 
+      </div>
+       <!-- ---------------------------------------------------  end Fiat --------------------------------- --> 
+       
+         
+     <!-- ---------------------------------------------------  Isuzu --------------------------------- -->    
+      <div id="Isuzu" class="tab-pane fade">
+      <h3></h3>
+       <div class="row">
+    <div class="col-md-12">
+      <div class="carousel carousel-showmanymoveone slide" id="carousel214">
+        <div class="carousel-inner" >
+          <div class="item active">
+            <div class="col-xs-12 col-sm-6 col-md-3 f">
+             <div id="two">
+             <a href="#"><img alt="service" src="images/is1.jpg" class="img-responsive"></a>
+              <div class="text3" style=" background: #fff; padding: 20px 5px 9px 7px; font-size:14px;">
+               <p style="text-align: center;"><span style="font-size:17px;color: #9a2220;">Model :</span><span style="font-size: 17px;"> D Max S Cross</span></p>
+               </div>
+            </div>
+          </div></div>
+                 
+           <div class="item">
+            <div class="col-xs-12 col-sm-6 col-md-3 f">
+             <div id="two" >
+            <a href="#"><img alt="service" src="images/is2.jpg" class="img-responsive"></a>
+              <div class="text3" style="background: #fff;     padding: 20px 5px 9px 7px; font-size: 14px;"> 
+               <p style="text-align: center;"><span style="font-size:17px;color: #9a2220;">Model :</span><span style="font-size: 17px;"> MU 7</span></p>
+               </div>
+               </div> </div></div>
+          
+          <div class="item">
+            <div class="col-xs-12 col-sm-6 col-md-3 f">
+             <div id="two">
+            <a href="#"><img alt="service" src="images/is3.jpg" class="img-responsive"></a>
+              <div class="text3" style="background: #fff; padding: 20px 5px 9px 7px;font-size: 14px;">
+                  <p style="text-align: center;"><span style="font-size:17px;color: #9a2220;">Model :</span><span style="font-size: 17px;"> MU X</span></p>
+               </div>
+            </div></div></div>
+            
+             <div class="item">
+            <div class="col-xs-12 col-sm-6 col-md-3 f">
+             <div id="two">
+            <a href="#"><img alt="service" src="images/is4.jpg" class="img-responsive"></a>
+              <div class="text3" style="background: #fff; padding: 20px 5px 9px 7px;font-size: 14px;">
+                  <p style="text-align: center;"><span style="font-size:17px;color: #9a2220;">Model :</span><span style="font-size: 17px;"> Pajero Sport</span></p>
+               </div>
+            </div></div></div>
+            
+          
+            
+        </div>
+        <a class="left carousel-control" href="#carousel214" data-slide="prev"><i class="glyphicon glyphicon-chevron-left a"></i></a>
+        <a class="right carousel-control" href="#carousel214" data-slide="next"><i class="glyphicon glyphicon-chevron-right a"></i></a>
+      </div>
+    </div>
+     </div> 
+      </div>
+       <!-- ---------------------------------------------------  end Isuzu --------------------------------- --> 
+       
+     <!-- ---------------------------------------------------  Mitsubishi --------------------------------- -->    
+      <div id="Mitsubishi" class="tab-pane fade">
+      <h3></h3>
+        <div class="row">
+    <div class="col-md-12">
+      <div class="carousel carousel-showmanymoveone slide" id="carousel215">
+        <div class="carousel-inner" >
+          <div class="item active">
+            <div class="col-xs-12 col-sm-6 col-md-3 f">
+             <div id="two">
+             <a href="#"><img alt="service" src="images/mit1.jpg" class="img-responsive"></a>
+              <div class="text3" style=" background: #fff; padding: 20px 5px 9px 7px;font-size:14px;">
+                <p style="text-align: center;"><span style="font-size:17px;color: #9a2220;">Model :</span><span style="font-size: 17px;"> Pajero Sport</span></p>
+               </div>
+            </div>
+          </div></div>
+                 
+          <div class="item">
+            <div class="col-xs-12 col-sm-6 col-md-3 f">
+             <div id="two" >
+            <a href="#"><img alt="service" src="images/mit2.jpg" class="img-responsive"></a>
+              <div class="text3" style="background: #fff;     padding: 20px 5px 9px 7px; font-size: 14px;">
+                <p style="text-align: center;"><span style="font-size:17px;color: #9a2220;">Model :</span><span style="font-size: 17px;"> Montero</span></p>
+               </div>
+               </div> </div></div>
+         
+            
+        </div>
+        <a class="left carousel-control" href="#carousel215" data-slide="prev"><i class="glyphicon glyphicon-chevron-left a"></i></a>
+        <a class="right carousel-control" href="#carousel215" data-slide="next"><i class="glyphicon glyphicon-chevron-right a"></i></a>
+      </div>
+    </div>
+     </div> 
+      </div>
+       <!-- ---------------------------------------------------  end Mitsubishi --------------------------------- --> 
+       
+       
+     <!-- ---------------------------------------------------  Jeep --------------------------------- -->    
+      <div id="Jeep" class="tab-pane fade">
+      <h3></h3>
+       <div class="row">
+    <div class="col-md-12">
+      <div class="carousel carousel-showmanymoveone slide" id="carousel216">
+        <div class="carousel-inner" >
+          <div class="item active">
+            <div class="col-xs-12 col-sm-6 col-md-3 f">
+             <div id="two">
+             <a href="#"><img alt="service" src="images/je1.jpg" class="img-responsive"></a>
+              <div class="text3" style=" background: #fff; padding: 20px 5px 9px 7px;font-size:14px;">
+                <p style="text-align: center;"><span style="font-size:17px;color: #9a2220;">Model :</span><span style="font-size: 17px;"> Compass</span></p>
+               </div>
+            </div>
+          </div></div>
+                 
+          <div class="item">
+            <div class="col-xs-12 col-sm-6 col-md-3 f">
+             <div id="two" >
+            <a href="#"><img alt="service" src="images/je2.jpg" class="img-responsive"></a>
+              <div class="text3" style="background: #fff;     padding: 20px 5px 9px 7px;font-size: 14px;">
+                 <p style="text-align: center;"><span style="font-size:17px;color: #9a2220;">Model :</span><span style="font-size: 17px;"> Wrangler</span></p>
+               </div>
+               </div> </div></div>
+            
+             <div class="item">
+            <div class="col-xs-12 col-sm-6 col-md-3 f">
+             <div id="two">
+            <a href="#"><img alt="service" src="images/je3.jpg" class="img-responsive"></a>
+              <div class="text3" style="background: #fff; padding: 20px 5px 9px 7px; font-size: 14px;">
+                 <p style="text-align: center;"><span style="font-size:17px;color: #9a2220;">Model :</span><span style="font-size: 17px;">  Grand Cherokee</span></p>
+               </div>
+            </div></div></div>
+            
+        </div>
+        <a class="left carousel-control" href="#carousel216" data-slide="prev"><i class="glyphicon glyphicon-chevron-left a"></i></a>
+        <a class="right carousel-control" href="#carousel216" data-slide="next"><i class="glyphicon glyphicon-chevron-right a"></i></a>
+      </div>
+    </div>
+     </div> 
+      </div>
+       <!-- ---------------------------------------------------  end Jeep --------------------------------- --> 
+       
+       
+     <!-- ---------------------------------------------------  bmw --------------------------------- -->    
+      <div id="BMW" class="tab-pane fade">
+      <h3></h3>
+       <div class="row">
+    <div class="col-md-12">
+      <div class="carousel carousel-showmanymoveone slide" id="carousel218">
+        <div class="carousel-inner" >
+          <div class="item active">
+            <div class="col-xs-12 col-sm-6 col-md-3 f">
+             <div id="two">
+             <a href="#"><img alt="service" src="images/bm1.jpg" class="img-responsive"></a>
+              <div class="text3" style=" background: #fff; padding: 20px 5px 9px 7px; font-size:14px;">
+               <p style="text-align: center;"><span style="font-size:17px;color: #9a2220;">Model :</span><span style="font-size: 17px;">  X!</span></p>
+               </div>
+            </div>
+          </div></div>
+                 
+          <div class="item">
+            <div class="col-xs-12 col-sm-6 col-md-3 f">
+             <div id="two" >
+            <a href="#"><img alt="service" src="images/bm2.jpg" class="img-responsive"></a>
+              <div class="text3" style="background: #fff;     padding: 20px 5px 9px 7px;font-size: 14px;">
+                <p style="text-align: center;"><span style="font-size:17px;color: #9a2220;">Model :</span><span style="font-size: 17px;"> 6 series</span></p>
+               </div>
+               </div> </div></div>
+            
+             <div class="item">
+            <div class="col-xs-12 col-sm-6 col-md-3 f">
+             <div id="two">
+            <a href="#"><img alt="service" src="images/bm3.jpg" class="img-responsive"></a>
+              <div class="text3" style="background: #fff; padding: 20px 5px 9px 7px;font-size: 14px;">
+                  <p style="text-align: center;"><span style="font-size:17px;color: #9a2220;">Model :</span><span style="font-size: 17px;"> 3 series</span></p>
+               </div>
+            </div></div></div>
+            
+            <div class="item">
+            <div class="col-xs-12 col-sm-6 col-md-3 f">
+             <div id="two">
+            <a href="#"><img alt="service" src="images/bm4.jpg" class="img-responsive"></a>
+              <div class="text3" style="background: #fff; padding: 20px 5px 9px 7px;font-size: 14px;">
+                  <p style="text-align: center;"><span style="font-size:17px;color: #9a2220;">Model :</span><span style="font-size: 17px;"> 7 series</span></p>
+               </div>
+            </div></div></div>
+            
+             <div class="item">
+            <div class="col-xs-12 col-sm-6 col-md-3 f">
+             <div id="two">
+            <a href="#"><img alt="service" src="images/bm5.jpg" class="img-responsive"></a>
+              <div class="text3" style="background: #fff; padding: 20px 5px 9px 7px;font-size: 14px;">
+                  <p style="text-align: center;"><span style="font-size:17px;color: #9a2220;">Model :</span><span style="font-size: 17px;"> 5 series</span></p>
+               </div>
+            </div></div></div>
+            
+             <div class="item">
+            <div class="col-xs-12 col-sm-6 col-md-3 f">
+             <div id="two">
+            <a href="#"><img alt="service" src="images/bm6.jpg" class="img-responsive"></a>
+              <div class="text3" style="background: #fff; padding: 20px 5px 9px 7px;font-size: 14px;">
+                  <p style="text-align: center;"><span style="font-size:17px;color: #9a2220;">Model :</span><span style="font-size: 17px;"> M5</span></p>
+               </div>
+            </div></div></div>
+            
+              <div class="item">
+            <div class="col-xs-12 col-sm-6 col-md-3 f">
+             <div id="two">
+            <a href="#"><img alt="service" src="images/bm7.jpg" class="img-responsive"></a>
+              <div class="text3" style="background: #fff; padding: 20px 5px 9px 7px;font-size: 14px;">
+                  <p style="text-align: center;"><span style="font-size:17px;color: #9a2220;">Model :</span><span style="font-size: 17px;"> Z4</span></p>
+               </div>
+            </div></div></div>
+            
+              <div class="item">
+            <div class="col-xs-12 col-sm-6 col-md-3 f">
+             <div id="two">
+            <a href="#"><img alt="service" src="images/bm8.jpg" class="img-responsive"></a>
+              <div class="text3" style="background: #fff; padding: 20px 5px 9px 7px;font-size: 14px;">
+                  <p style="text-align: center;"><span style="font-size:17px;color: #9a2220;">Model :</span><span style="font-size: 17px;"> i8</span></p>
+               </div>
+            </div></div></div>
+            
+             <div class="item">
+            <div class="col-xs-12 col-sm-6 col-md-3 f">
+             <div id="two">
+            <a href="#"><img alt="service" src="images/bm9.jpg" class="img-responsive"></a>
+              <div class="text3" style="background: #fff; padding: 20px 5px 9px 7px;font-size: 14px;">
+                  <p style="text-align: center;"><span style="font-size:17px;color: #9a2220;">Model :</span><span style="font-size: 17px;"> M3</span></p>
+               </div>
+            </div></div></div>
+            
+             <div class="item">
+            <div class="col-xs-12 col-sm-6 col-md-3 f">
+             <div id="two">
+            <a href="#"><img alt="service" src="images/bm10.jpg" class="img-responsive"></a>
+              <div class="text3" style="background: #fff; padding: 20px 5px 9px 7px;font-size: 14px;">
+                  <p style="text-align: center;"><span style="font-size:17px;color: #9a2220;">Model :</span><span style="font-size: 17px;"> M4</span></p>
+               </div>
+            </div></div></div>
+            
+              <div class="item">
+            <div class="col-xs-12 col-sm-6 col-md-3 f">
+             <div id="two">
+            <a href="#"><img alt="service" src="images/bm11.jpg" class="img-responsive"></a>
+              <div class="text3" style="background: #fff; padding: 20px 5px 9px 7px;font-size: 14px;">
+                  <p style="text-align: center;"><span style="font-size:17px;color: #9a2220;">Model :</span><span style="font-size: 17px;"> X3</span></p>
+               </div>
+            </div></div></div>
+            
+              <div class="item">
+            <div class="col-xs-12 col-sm-6 col-md-3 f">
+             <div id="two">
+            <a href="#"><img alt="service" src="images/bm12.jpg" class="img-responsive"></a>
+              <div class="text3" style="background: #fff; padding: 20px 5px 9px 7px;font-size: 14px;">
+                  <p style="text-align: center;"><span style="font-size:17px;color: #9a2220;">Model :</span><span style="font-size: 17px;"> X5</span></p>
+               </div>
+            </div></div></div>
+            
+            <div class="item">
+            <div class="col-xs-12 col-sm-6 col-md-3 f">
+             <div id="two">
+            <a href="#"><img alt="service" src="images/bm13.jpg" class="img-responsive"></a>
+              <div class="text3" style="background: #fff; padding: 20px 5px 9px 7px;font-size: 14px;">
+                  <p style="text-align: center;"><span style="font-size:17px;color: #9a2220;">Model :</span><span style="font-size: 17px;"> Z4</span></p>
+               </div>
+            </div></div></div>
+           
+        </div>
+        <a class="left carousel-control" href="#carousel218" data-slide="prev"><i class="glyphicon glyphicon-chevron-left a"></i></a>
+        <a class="right carousel-control" href="#carousel218" data-slide="next"><i class="glyphicon glyphicon-chevron-right a"></i></a>
+      </div>
+    </div>
+     </div> 
+      </div>
+       <!-- ---------------------------------------------------  end bmw --------------------------------- --> 
+       
+       
+       
+       
+       
+       
+       
+       
+       
+       
+       
+       
+       
+       
+       
+       
+       
+       
+       
+       
+       
+       
+       
+       
+       
+       
+       
+       
+       
+       
+       
+     <!-- ---------------------------------------------------  Mercedes --------------------------------- -->    
+      <div id="Mercedes" class="tab-pane fade">
+      <h3></h3>
+       <div class="row">
+    <div class="col-md-12">
+      <div class="carousel carousel-showmanymoveone slide" id="carousel217">
+        <div class="carousel-inner" >
+          <div class="item active">
+            <div class="col-xs-12 col-sm-6 col-md-3 f">
+             <div id="two">
+             <a href="#"><img alt="service" src="images/mb1.jpg" class="img-responsive"></a>
+              <div class="text3" style=" background: #fff; padding: 20px 5px 9px 7px;font-size:14px;">
+                <p style="text-align: center;"><span style="font-size:17px;color: #9a2220;">Model :</span><span style="font-size: 17px;"> B Class</span></p>
+               </div>
+            </div>
+          </div></div>
+                 
+          <div class="item">
+            <div class="col-xs-12 col-sm-6 col-md-3 f">
+             <div id="two" >
+            <a href="#"><img alt="service" src="images/mb2.jpg" class="img-responsive"></a>
+              <div class="text3" style="background: #fff;  padding: 20px 5px 9px 7px;font-size: 14px;">
+                <p style="text-align: center;"><span style="font-size:17px;color: #9a2220;">Model :</span><span style="font-size: 17px;"> C Class</span></p>
+               </div>
+               </div> </div></div>
+            
+             <div class="item">
+            <div class="col-xs-12 col-sm-6 col-md-3 f">
+             <div id="two">
+            <a href="#"><img alt="service" src="images/mb3.jpg" class="img-responsive"></a>
+              <div class="text3" style="background: #fff; padding: 20px 5px 9px 7px; font-size: 14px;">
+                  <p style="text-align: center;"><span style="font-size:17px;color: #9a2220;">Model :</span><span style="font-size: 17px;"> CLA</span></p>
+               </div>
+            </div></div></div>
+            
+             <div class="item">
+            <div class="col-xs-12 col-sm-6 col-md-3 f">
+             <div id="two">
+            <a href="#"><img alt="service" src="images/mb4.jpg" class="img-responsive"></a>
+              <div class="text3" style="background: #fff; padding: 20px 5px 9px 7px; font-size: 14px;">
+                  <p style="text-align: center;"><span style="font-size:17px;color: #9a2220;">Model :</span><span style="font-size: 17px;"> G Class</span></p>
+               </div>
+            </div></div></div>
+            
+               <div class="item">
+            <div class="col-xs-12 col-sm-6 col-md-3 f">
+             <div id="two">
+            <a href="#"><img alt="service" src="images/mb5.jpg" class="img-responsive"></a>
+              <div class="text3" style="background: #fff; padding: 20px 5px 9px 7px; font-size: 14px;">
+                  <p style="text-align: center;"><span style="font-size:17px;color: #9a2220;">Model :</span><span style="font-size: 17px;"> GLA</span></p>
+               </div>
+            </div></div></div>
+            
+            
+               <div class="item">
+            <div class="col-xs-12 col-sm-6 col-md-3 f">
+             <div id="two">
+            <a href="#"><img alt="service" src="images/mb6.jpg" class="img-responsive"></a>
+              <div class="text3" style="background: #fff; padding: 20px 5px 9px 7px; font-size: 14px;">
+                  <p style="text-align: center;"><span style="font-size:17px;color: #9a2220;">Model :</span><span style="font-size: 17px;"> GLC</span></p>
+               </div>
+            </div></div></div>
+            
+             <div class="item">
+            <div class="col-xs-12 col-sm-6 col-md-3 f">
+             <div id="two">
+            <a href="#"><img alt="service" src="images/mb7.jpg" class="img-responsive"></a>
+              <div class="text3" style="background: #fff; padding: 20px 5px 9px 7px; font-size: 14px;">
+                  <p style="text-align: center;"><span style="font-size:17px;color: #9a2220;">Model :</span><span style="font-size: 17px;"> GLS</span></p>
+               </div>
+            </div></div></div>
+            
+             <div class="item">
+            <div class="col-xs-12 col-sm-6 col-md-3 f">
+             <div id="two">
+            <a href="#"><img alt="service" src="images/mb8.jpg" class="img-responsive"></a>
+              <div class="text3" style="background: #fff; padding: 20px 5px 9px 7px; font-size: 14px;">
+                  <p style="text-align: center;"><span style="font-size:17px;color: #9a2220;">Model :</span><span style="font-size: 17px;"> A Class</span></p>
+               </div>
+            </div></div></div>
+            
+            <div class="item">
+            <div class="col-xs-12 col-sm-6 col-md-3 f">
+             <div id="two">
+            <a href="#"><img alt="service" src="images/mb9.jpg" class="img-responsive"></a>
+              <div class="text3" style="background: #fff; padding: 20px 5px 9px 7px; font-size: 14px;">
+                  <p style="text-align: center;"><span style="font-size:17px;color: #9a2220;">Model :</span><span style="font-size: 17px;"> E Class</span></p>
+               </div>
+            </div></div></div>
+            
+            <div class="item">
+            <div class="col-xs-12 col-sm-6 col-md-3 f">
+             <div id="two">
+            <a href="#"><img alt="service" src="images/mb10.jpg" class="img-responsive"></a>
+              <div class="text3" style="background: #fff; padding: 20px 5px 9px 7px; font-size: 14px;">
+                  <p style="text-align: center;"><span style="font-size:17px;color: #9a2220;">Model :</span><span style="font-size: 17px;"> S Class</span></p>
+               </div>
+            </div></div></div>
+            
+             <div class="item">
+            <div class="col-xs-12 col-sm-6 col-md-3 f">
+             <div id="two">
+            <a href="#"><img alt="service" src="images/mb11.jpg" class="img-responsive"></a>
+              <div class="text3" style="background: #fff; padding: 20px 5px 9px 7px; font-size: 14px;">
+                  <p style="text-align: center;"><span style="font-size:17px;color: #9a2220;">Model :</span><span style="font-size: 17px;"> SLC</span></p>
+               </div>
+            </div></div></div>
+            
+             <div class="item">
+            <div class="col-xs-12 col-sm-6 col-md-3 f">
+             <div id="two">
+            <a href="#"><img alt="service" src="images/mb12.jpg" class="img-responsive"></a>
+              <div class="text3" style="background: #fff; padding: 20px 5px 9px 7px; font-size: 14px;">
+                  <p style="text-align: center;"><span style="font-size:17px;color: #9a2220;">Model :</span><span style="font-size: 17px;"> AMG-GT</span></p>
+               </div>
+            </div></div></div>
+            
+             <div class="item">
+            <div class="col-xs-12 col-sm-6 col-md-3 f">
+             <div id="two">
+            <a href="#"><img alt="service" src="images/mb13.jpg" class="img-responsive"></a>
+              <div class="text3" style="background: #fff; padding: 20px 5px 9px 7px; font-size: 14px;">
+                  <p style="text-align: center;"><span style="font-size:17px;color: #9a2220;">Model :</span><span style="font-size: 17px;"> C Class Cabriolet</span></p>
+               </div>
+            </div></div></div>
+            
+             <div class="item">
+            <div class="col-xs-12 col-sm-6 col-md-3 f">
+             <div id="two">
+            <a href="#"><img alt="service" src="images/mb14.jpg" class="img-responsive"></a>
+              <div class="text3" style="background: #fff; padding: 20px 5px 9px 7px; font-size: 14px;">
+                  <p style="text-align: center;"><span style="font-size:17px;color: #9a2220;">Model :</span><span style="font-size: 17px;"> S Class Cabriolet</span></p>
+               </div>
+            </div></div></div>
+            
+          
+           
+        </div>
+        <a class="left carousel-control" href="#carousel217" data-slide="prev"><i class="glyphicon glyphicon-chevron-left a"></i></a>
+        <a class="right carousel-control" href="#carousel217" data-slide="next"><i class="glyphicon glyphicon-chevron-right a"></i></a>
+      </div>
+    </div>
+     </div> 
+      </div>
+       <!-- ---------------------------------------------------  end Mercedes --------------------------------- --> 
+       
+       
+       <!-- ---------------------------------------------------  Volvo --------------------------------- -->    
+      <div id="Volvo" class="tab-pane fade">
+      <h3></h3>
+       <div class="row">
+    <div class="col-md-12">
+      <div class="carousel carousel-showmanymoveone slide" id="carousel210">
+        <div class="carousel-inner" >
+          <div class="item active">
+            <div class="col-xs-12 col-sm-6 col-md-3 f">
+             <div id="two">
+             <a href="#"><img alt="service" src="images/vo1.jpg" class="img-responsive"></a>
+              <div class="text3" style=" background: #fff; padding: 20px 5px 9px 7px; font-size:14px;">
+             <p style="text-align: center;"><span style="font-size:17px;color: #9a2220;">Model :</span><span style="font-size: 17px;"> V 40 Cross Country</span></p>
+               </div>
+            </div>
+          </div></div>
+                 
+          <div class="item">
+            <div class="col-xs-12 col-sm-6 col-md-3 f">
+             <div id="two" >
+            <a href="#"><img alt="service" src="images/vo2.jpg" class="img-responsive"></a>
+              <div class="text3" style="background: #fff; padding: 20px 5px 9px 7px; font-size: 14px;">
+                <p style="text-align: center;"><span style="font-size:17px;color: #9a2220;">Model :</span><span style="font-size: 17px;"> XC 60</span></p>
+               </div>
+               </div> </div></div>
+            
+             <div class="item">
+            <div class="col-xs-12 col-sm-6 col-md-3 f">
+             <div id="two">
+            <a href="#"><img alt="service" src="images/vo3.jpg" class="img-responsive"></a>
+              <div class="text3" style="background: #fff; padding: 20px 5px 9px 7px; font-size: 14px;">
+                  <p style="text-align: center;"><span style="font-size:17px;color: #9a2220;">Model :</span><span style="font-size: 17px;">  S 90</span></p>
+               </div>
+            </div></div></div>
+            
+             <div class="item">
+            <div class="col-xs-12 col-sm-6 col-md-3 f">
+             <div id="two">
+            <a href="#"><img alt="service" src="images/vo3.jpg" class="img-responsive"></a>
+              <div class="text3" style="background: #fff; padding: 20px 5px 9px 7px; font-size: 14px;">
+                  <p style="text-align: center;"><span style="font-size:17px;color: #9a2220;">Model :</span><span style="font-size: 17px;"> XC 90</span></p>
+               </div>
+            </div></div></div>
+           
+           
+           
+        </div>
+        <a class="left carousel-control" href="#carousel210" data-slide="prev"><i class="glyphicon glyphicon-chevron-left a"></i></a>
+        <a class="right carousel-control" href="#carousel210" data-slide="next"><i class="glyphicon glyphicon-chevron-right a"></i></a>
+      </div>
+    </div>
+     </div> 
+      </div>
+       <!-- ---------------------------------------------------  end Volvo --------------------------------- --> 
+       
+        <!-- ---------------------------------------------------  Porsche --------------------------------- -->    
+      <div id="Porsche" class="tab-pane fade">
+      <h3></h3>
+      <div class="row">
+    <div class="col-md-12">
+      <div class="carousel carousel-showmanymoveone slide" id="carousel610">
+        <div class="carousel-inner" >
+         <div class="item active">
+            <div class="col-xs-12 col-sm-6 col-md-3 f">
+             <div id="two">
+             <a href="#"><img alt="service" src="images/po1.jpg" class="img-responsive"></a>
+              <div class="text3" style=" background: #fff; padding: 20px 5px 9px 7px; font-size:14px;">
+             <p style="text-align: center;"><span style="font-size:17px;color: #9a2220;">Model :</span><span style="font-size: 17px;"> 718</span></p>
+               </div>
+            </div>
+          </div></div>
+                 
+          <div class="item">
+            <div class="col-xs-12 col-sm-6 col-md-3 f">
+             <div id="two" >
+            <a href="#"><img alt="service" src="images/po2.jpg" class="img-responsive"></a>
+              <div class="text3" style="background: #fff; padding: 20px 5px 9px 7px; font-size: 14px;">
+                <p style="text-align: center;"><span style="font-size:17px;color: #9a2220;">Model :</span><span style="font-size: 17px;"> 911</span></p>
+               </div>
+               </div> </div></div>
+            
+            <div class="item">
+            <div class="col-xs-12 col-sm-6 col-md-3 f">
+             <div id="two" >
+            <a href="#"><img alt="service" src="images/po3.jpg" class="img-responsive"></a>
+              <div class="text3" style="background: #fff; padding: 20px 5px 9px 7px; font-size: 14px;">
+                <p style="text-align: center;"><span style="font-size:17px;color: #9a2220;">Model :</span><span style="font-size: 17px;"> Macan</span></p>
+               </div>
+               </div> </div></div>
+            
+          <div class="item">
+            <div class="col-xs-12 col-sm-6 col-md-3 f">
+             <div id="two" >
+            <a href="#"><img alt="service" src="images/po4.jpg" class="img-responsive"></a>
+              <div class="text3" style="background: #fff; padding: 20px 5px 9px 7px; font-size: 14px;">
+                <p style="text-align: center;"><span style="font-size:17px;color: #9a2220;">Model :</span><span style="font-size: 17px;"> Panamera</span></p>
+               </div>
+               </div> </div></div>
+           
+        </div>
+        <a class="left carousel-control" href="#carousel610" data-slide="prev"><i class="glyphicon glyphicon-chevron-left a"></i></a>
+        <a class="right carousel-control" href="#carousel610" data-slide="next"><i class="glyphicon glyphicon-chevron-right a"></i></a>
+      </div>
+    </div>
+     </div> 
+      </div>
+       <!-- ---------------------------------------------------  end Porsche --------------------------------- --> 
+       
+         <!-- ---------------------------------------------------  #Land1 --------------------------------- -->    
+      <div id="land1" class="tab-pane fade">
+      <h3></h3>
+      <div class="row">
+    <div class="col-md-12">
+      <div class="carousel carousel-showmanymoveone slide" id="carousel710">
+        <div class="carousel-inner" >
+         <div class="item active">
+            <div class="col-xs-12 col-sm-6 col-md-3 f">
+             <div id="two">
+             <a href="#"><img alt="service" src="images/la1.jpg" class="img-responsive"></a>
+              <div class="text3" style=" background: #fff; padding: 20px 5px 9px 7px; font-size:14px;">
+             <p style="text-align: center;"><span style="font-size:17px;color: #9a2220;">Model :</span><span style="font-size: 17px;"> Range Rover Evoque</span></p>
+               </div>
+            </div>
+          </div></div>
+                 
+          <div class="item">
+            <div class="col-xs-12 col-sm-6 col-md-3 f">
+             <div id="two" >
+            <a href="#"><img alt="service" src="images/la2.jpg" class="img-responsive"></a>
+              <div class="text3" style="background: #fff; padding: 20px 5px 9px 7px; font-size: 14px;">
+                <p style="text-align: center;"><span style="font-size:17px;color: #9a2220;">Model :</span><span style="font-size: 17px;"> Discovery</span></p>
+               </div>
+               </div> </div></div>
+            
+            <div class="item">
+            <div class="col-xs-12 col-sm-6 col-md-3 f">
+             <div id="two" >
+            <a href="#"><img alt="service" src="images/la3.jpg" class="img-responsive"></a>
+              <div class="text3" style="background: #fff; padding: 20px 5px 9px 7px; font-size: 14px;">
+                <p style="text-align: center;"><span style="font-size:17px;color: #9a2220;">Model :</span><span style="font-size: 17px;">Discovery Sport</span></p>
+               </div>
+               </div> </div></div>
+            
+          <div class="item">
+            <div class="col-xs-12 col-sm-6 col-md-3 f">
+             <div id="two" >
+            <a href="#"><img alt="service" src="images/la4.jpg" class="img-responsive"></a>
+              <div class="text3" style="background: #fff; padding: 20px 5px 9px 7px; font-size: 14px;">
+                <p style="text-align: center;"><span style="font-size:17px;color: #9a2220;">Model :</span><span style="font-size: 17px;">Range Rover</span></p>
+               </div>
+               </div> </div></div>
+               
+                <div class="item">
+            <div class="col-xs-12 col-sm-6 col-md-3 f">
+             <div id="two" >
+            <a href="#"><img alt="service" src="images/la5.jpg" class="img-responsive"></a>
+              <div class="text3" style="background: #fff; padding: 20px 5px 9px 7px; font-size: 14px;">
+                <p style="text-align: center;"><span style="font-size:17px;color: #9a2220;">Model :</span><span style="font-size: 17px;"> Range Rover Sport</span></p>
+               </div>
+               </div> </div></div>
+           
+        </div>
+        <a class="left carousel-control" href="#carousel710" data-slide="prev"><i class="glyphicon glyphicon-chevron-left a"></i></a>
+        <a class="right carousel-control" href="#carousel710" data-slide="next"><i class="glyphicon glyphicon-chevron-right a"></i></a>
+      </div>
+    </div>
+     </div> 
+      </div>
+       <!-- ---------------------------------------------------  end #Land1 --------------------------------- --> 
+       
+         <!-- ---------------------------------------------------  #Jaguar --------------------------------- -->    
+      <div id="jaguar" class="tab-pane fade">
+      <h3></h3>
+      <div class="row">
+    <div class="col-md-12">
+      <div class="carousel carousel-showmanymoveone slide" id="carousel810">
+        <div class="carousel-inner" >
+         <div class="item active">
+            <div class="col-xs-12 col-sm-6 col-md-3 f">
+             <div id="two">
+             <a href="#"><img alt="service" src="images/la1.jpg" class="img-responsive"></a>
+              <div class="text3" style=" background: #fff; padding: 20px 5px 9px 7px; font-size:14px;">
+             <p style="text-align: center;"><span style="font-size:17px;color: #9a2220;">Model :</span><span style="font-size: 17px;"> XE</span></p>
+               </div>
+            </div>
+          </div></div>
+                 
+          <div class="item">
+            <div class="col-xs-12 col-sm-6 col-md-3 f">
+             <div id="two" >
+            <a href="#"><img alt="service" src="images/la2.jpg" class="img-responsive"></a>
+              <div class="text3" style="background: #fff; padding: 20px 5px 9px 7px; font-size: 14px;">
+                <p style="text-align: center;"><span style="font-size:17px;color: #9a2220;">Model :</span><span style="font-size: 17px;"> XF</span></p>
+               </div>
+               </div> </div></div>
+            
+            <div class="item">
+            <div class="col-xs-12 col-sm-6 col-md-3 f">
+             <div id="two" >
+            <a href="#"><img alt="service" src="images/la3.jpg" class="img-responsive"></a>
+              <div class="text3" style="background: #fff; padding: 20px 5px 9px 7px; font-size: 14px;">
+                <p style="text-align: center;"><span style="font-size:17px;color: #9a2220;">Model :</span><span style="font-size: 17px;">XJ L</span></p>
+               </div>
+               </div> </div></div>
+            
+          <div class="item">
+            <div class="col-xs-12 col-sm-6 col-md-3 f">
+             <div id="two" >
+            <a href="#"><img alt="service" src="images/la4.jpg" class="img-responsive"></a>
+              <div class="text3" style="background: #fff; padding: 20px 5px 9px 7px; font-size: 14px;">
+                <p style="text-align: center;"><span style="font-size:17px;color: #9a2220;">Model :</span><span style="font-size: 17px;">F Pace</span></p>
+               </div>
+               </div> </div></div>
+               
+                <div class="item">
+            <div class="col-xs-12 col-sm-6 col-md-3 f">
+             <div id="two" >
+            <a href="#"><img alt="service" src="images/la5.jpg" class="img-responsive"></a>
+              <div class="text3" style="background: #fff; padding: 20px 5px 9px 7px; font-size: 14px;">
+                <p style="text-align: center;"><span style="font-size:17px;color: #9a2220;">Model :</span><span style="font-size: 17px;">F Type</span></p>
+               </div>
+               </div> </div></div>
+           
+        </div>
+        <a class="left carousel-control" href="#carousel810" data-slide="prev"><i class="glyphicon glyphicon-chevron-left a"></i></a>
+        <a class="right carousel-control" href="#carousel810" data-slide="next"><i class="glyphicon glyphicon-chevron-right a"></i></a>
+      </div>
+    </div>
+     </div> 
+      </div>
+       <!-- ---------------------------------------------------  end Jaguar --------------------------------- --> 
+       
+         <!-- ---------------------------------------------------  #DC --------------------------------- -->    
+      <div id="DC" class="tab-pane fade">
+      <h3></h3>
+      <div class="row">
+    <div class="col-md-12">
+      <div class="carousel carousel-showmanymoveone slide" id="carousel910">
+        <div class="carousel-inner" >
+         <div class="item active">
+            <div class="col-xs-12 col-sm-6 col-md-3 f">
+             <div id="two">
+             <a href="#"><img alt="service" src="images/dc.jpg" class="img-responsive"></a>
+              <div class="text3" style=" background: #fff; padding: 20px 5px 9px 7px; font-size:14px;">
+             <p style="text-align: center;"><span style="font-size:17px;color: #9a2220;">Model :</span><span style="font-size: 17px;"> Range Rover Evoque</span></p>
+               </div>
+            </div>
+          </div></div>
+             
+           
+        </div>
+        <a class="left carousel-control" href="#carousel910" data-slide="prev"><i class="glyphicon glyphicon-chevron-left a"></i></a>
+        <a class="right carousel-control" href="#carousel910" data-slide="next"><i class="glyphicon glyphicon-chevron-right a"></i></a>
+      </div>
+    </div>
+     </div> 
+      </div>
+       <!-- ---------------------------------------------------  end DC --------------------------------- --> 
+       
+        <!-- ---------------------------------------------------  #Bentley --------------------------------- -->    
+      <div id="Bentley" class="tab-pane fade">
+      <h3></h3>
+      <div class="row">
+    <div class="col-md-12">
+      <div class="carousel carousel-showmanymoveone slide" id="carousel010">
+        <div class="carousel-inner" >
+         <div class="item active">
+            <div class="col-xs-12 col-sm-6 col-md-3 f">
+             <div id="two">
+             <a href="#"><img alt="service" src="images/be1.jpg" class="img-responsive"></a>
+              <div class="text3" style=" background: #fff; padding: 20px 5px 9px 7px; font-size:14px;">
+             <p style="text-align: center;"><span style="font-size:17px;color: #9a2220;">Model :</span><span style="font-size: 17px;"> Bentayga</span></p>
+               </div>
+            </div>
+          </div></div>
+                 
+          <div class="item">
+            <div class="col-xs-12 col-sm-6 col-md-3 f">
+             <div id="two" >
+            <a href="#"><img alt="service" src="images/be2.jpg" class="img-responsive"></a>
+              <div class="text3" style="background: #fff; padding: 20px 5px 9px 7px; font-size: 14px;">
+                <p style="text-align: center;"><span style="font-size:17px;color: #9a2220;">Model :</span><span style="font-size: 17px;"> Mulsanne</span></p>
+               </div>
+               </div> </div></div>
+            
+            <div class="item">
+            <div class="col-xs-12 col-sm-6 col-md-3 f">
+             <div id="two" >
+            <a href="#"><img alt="service" src="images/be3.jpg" class="img-responsive"></a>
+              <div class="text3" style="background: #fff; padding: 20px 5px 9px 7px; font-size: 14px;">
+                <p style="text-align: center;"><span style="font-size:17px;color: #9a2220;">Model :</span><span style="font-size: 17px;">Continental Flying Spur</span></p>
+               </div>
+               </div> </div></div>
+            
+          <div class="item">
+            <div class="col-xs-12 col-sm-6 col-md-3 f">
+             <div id="two" >
+            <a href="#"><img alt="service" src="images/be4.jpg" class="img-responsive"></a>
+              <div class="text3" style="background: #fff; padding: 20px 5px 9px 7px; font-size: 14px;">
+                <p style="text-align: center;"><span style="font-size:17px;color: #9a2220;">Model :</span><span style="font-size: 17px;">Continental GTC </span></p>
+               </div>
+               </div> </div></div>
+               
+                <div class="item">
+            <div class="col-xs-12 col-sm-6 col-md-3 f">
+             <div id="two" >
+            <a href="#"><img alt="service" src="images/be5.jpg" class="img-responsive"></a>
+              <div class="text3" style="background: #fff; padding: 20px 5px 9px 7px; font-size: 14px;">
+                <p style="text-align: center;"><span style="font-size:17px;color: #9a2220;">Model :</span><span style="font-size: 17px;"> Continental GT</span></p>
+               </div>
+               </div> </div></div>
+           
+        </div>
+        <a class="left carousel-control" href="#carousel010" data-slide="prev"><i class="glyphicon glyphicon-chevron-left a"></i></a>
+        <a class="right carousel-control" href="#carousel010" data-slide="next"><i class="glyphicon glyphicon-chevron-right a"></i></a>
+      </div>
+    </div>
+     </div> 
+      </div>
+       <!-- ---------------------------------------------------  end Bentley --------------------------------- --> 
+       
+        <!-- ---------------------------------------------------  #Mini --------------------------------- -->    
+      <div id="Mini" class="tab-pane fade">
+      <h3></h3>
+      <div class="row">
+    <div class="col-md-12">
+      <div class="carousel carousel-showmanymoveone slide" id="carousel1010">
+        <div class="carousel-inner" >
+         <div class="item active">
+            <div class="col-xs-12 col-sm-6 col-md-3 f">
+             <div id="two">
+             <a href="#"><img alt="service" src="images/mini1.jpg" class="img-responsive"></a>
+              <div class="text3" style=" background: #fff; padding: 20px 5px 9px 7px; font-size:14px;">
+             <p style="text-align: center;"><span style="font-size:17px;color: #9a2220;">Model :</span><span style="font-size: 17px;"> Cooper</span></p>
+               </div>
+            </div>
+          </div></div>
+            
+              <div class="item">
+            <div class="col-xs-12 col-sm-6 col-md-3 f">
+             <div id="two" >
+            <a href="#"><img alt="service" src="images/mini2.jpg" class="img-responsive"></a>
+              <div class="text3" style="background: #fff; padding: 20px 5px 9px 7px; font-size: 14px;">
+                <p style="text-align: center;"><span style="font-size:17px;color: #9a2220;">Model :</span><span style="font-size: 17px;"> Countryman</span></p>
+               </div>
+               </div> </div></div>
+               
+                 <div class="item">
+            <div class="col-xs-12 col-sm-6 col-md-3 f">
+             <div id="two" >
+            <a href="#"><img alt="service" src="images/mini3.jpg" class="img-responsive"></a>
+              <div class="text3" style="background: #fff; padding: 20px 5px 9px 7px; font-size: 14px;">
+                <p style="text-align: center;"><span style="font-size:17px;color: #9a2220;">Model :</span><span style="font-size: 17px;"> Clubman</span></p>
+               </div>
+               </div> </div></div>
+               
+                 <div class="item">
+            <div class="col-xs-12 col-sm-6 col-md-3 f">
+             <div id="two" >
+            <a href="#"><img alt="service" src="images/mini4.jpg" class="img-responsive"></a>
+              <div class="text3" style="background: #fff; padding: 20px 5px 9px 7px; font-size: 14px;">
+                <p style="text-align: center;"><span style="font-size:17px;color: #9a2220;">Model :</span><span style="font-size: 17px;"> Convertible</span></p>
+               </div>
+               </div> </div></div>
+           
+        </div>
+        <a class="left carousel-control" href="#carousel1010" data-slide="prev"><i class="glyphicon glyphicon-chevron-left a"></i></a>
+        <a class="right carousel-control" href="#carousel1010" data-slide="next"><i class="glyphicon glyphicon-chevron-right a"></i></a>
+      </div>
+    </div>
+     </div> 
+      </div>
+       <!-- ---------------------------------------------------  end Mini --------------------------------- --> 
+       
+              <!-- ---------------------------------------------------  #Mini --------------------------------- -->    
+      <div id="Mini" class="tab-pane fade">
+      <h3></h3>
+      <div class="row">
+    <div class="col-md-12">
+      <div class="carousel carousel-showmanymoveone slide" id="carousel1110">
+        <div class="carousel-inner" >
+         <div class="item active">
+            <div class="col-xs-12 col-sm-6 col-md-3 f">
+             <div id="two">
+             <a href="#"><img alt="service" src="images/la1.jpg" class="img-responsive"></a>
+              <div class="text3" style=" background: #fff; padding: 20px 5px 9px 7px; font-size:14px;">
+             <p style="text-align: center;"><span style="font-size:17px;color: #9a2220;">Model :</span><span style="font-size: 17px;"> Range Rover Evoque</span></p>
+               </div>
+            </div>
+          </div></div>
+                 
+          <div class="item">
+            <div class="col-xs-12 col-sm-6 col-md-3 f">
+             <div id="two" >
+            <a href="#"><img alt="service" src="images/la2.jpg" class="img-responsive"></a>
+              <div class="text3" style="background: #fff; padding: 20px 5px 9px 7px; font-size: 14px;">
+                <p style="text-align: center;"><span style="font-size:17px;color: #9a2220;">Model :</span><span style="font-size: 17px;"> Discovery</span></p>
+               </div>
+               </div> </div></div>
+            
+            <div class="item">
+            <div class="col-xs-12 col-sm-6 col-md-3 f">
+             <div id="two" >
+            <a href="#"><img alt="service" src="images/mini3.jpg" class="img-responsive"></a>
+              <div class="text3" style="background: #fff; padding: 20px 5px 9px 7px; font-size: 14px;">
+                <p style="text-align: center;"><span style="font-size:17px;color: #9a2220;">Model :</span><span style="font-size: 17px;">Discovery Sport</span></p>
+               </div>
+               </div> </div></div>
+            
+          <div class="item">
+            <div class="col-xs-12 col-sm-6 col-md-3 f">
+             <div id="two" >
+            <a href="#"><img alt="service" src="images/mini4.jpg" class="img-responsive"></a>
+              <div class="text3" style="background: #fff; padding: 20px 5px 9px 7px; font-size: 14px;">
+                <p style="text-align: center;"><span style="font-size:17px;color: #9a2220;">Model :</span><span style="font-size: 17px;">Range Rover</span></p>
+               </div>
+               </div> </div></div>
+               
+              
+           
+        </div>
+        <a class="left carousel-control" href="#carousel1110" data-slide="prev"><i class="glyphicon glyphicon-chevron-left a"></i></a>
+        <a class="right carousel-control" href="#carousel1110" data-slide="next"><i class="glyphicon glyphicon-chevron-right a"></i></a>
+      </div>
+    </div>
+     </div> 
+      </div>
+       <!-- ---------------------------------------------------  end Mini --------------------------------- --> 
+       
+              <!-- ---------------------------------------------------  #Lexus --------------------------------- -->    
+      <div id="Lexus" class="tab-pane fade">
+      <h3></h3>
+      <div class="row">
+    <div class="col-md-12">
+      <div class="carousel carousel-showmanymoveone slide" id="carousel1210">
+        <div class="carousel-inner" >
+         <div class="item active">
+            <div class="col-xs-12 col-sm-6 col-md-3 f">
+             <div id="two">
+             <a href="#"><img alt="service" src="images/le1.jpg" class="img-responsive"></a>
+              <div class="text3" style=" background: #fff; padding: 20px 5px 9px 7px; font-size:14px;">
+             <p style="text-align: center;"><span style="font-size:17px;color: #9a2220;">Model :</span><span style="font-size: 17px;"> ES</span></p>
+               </div>
+            </div>
+          </div></div>
+                 
+          <div class="item">
+            <div class="col-xs-12 col-sm-6 col-md-3 f">
+             <div id="two" >
+            <a href="#"><img alt="service" src="images/le2.jpg" class="img-responsive"></a>
+              <div class="text3" style="background: #fff; padding: 20px 5px 9px 7px; font-size: 14px;">
+                <p style="text-align: center;"><span style="font-size:17px;color: #9a2220;">Model :</span><span style="font-size: 17px;"> LX</span></p>
+               </div>
+               </div> </div></div>
+            
+            <div class="item">
+            <div class="col-xs-12 col-sm-6 col-md-3 f">
+             <div id="two" >
+            <a href="#"><img alt="service" src="images/le3.jpg" class="img-responsive"></a>
+              <div class="text3" style="background: #fff; padding: 20px 5px 9px 7px; font-size: 14px;">
+                <p style="text-align: center;"><span style="font-size:17px;color: #9a2220;">Model :</span><span style="font-size: 17px;">RX</span></p>
+               </div>
+               </div> </div></div>
+            
+          <div class="item">
+            <div class="col-xs-12 col-sm-6 col-md-3 f">
+             <div id="two" >
+            <a href="#"><img alt="service" src="images/le4.jpg" class="img-responsive"></a>
+              <div class="text3" style="background: #fff; padding: 20px 5px 9px 7px; font-size: 14px;">
+                <p style="text-align: center;"><span style="font-size:17px;color: #9a2220;">Model :</span><span style="font-size: 17px;">LS</span></p>
+               </div>
+               </div> </div></div>
+               
+                <div class="item">
+            <div class="col-xs-12 col-sm-6 col-md-3 f">
+             <div id="two" >
+            <a href="#"><img alt="service" src="images/la5.jpg" class="img-responsive"></a>
+              <div class="text3" style="background: #fff; padding: 20px 5px 9px 7px; font-size: 14px;">
+                <p style="text-align: center;"><span style="font-size:17px;color: #9a2220;">Model :</span><span style="font-size: 17px;"> NX</span></p>
+               </div>
+               </div> </div></div>
+           
+        </div>
+        <a class="left carousel-control" href="#carousel1210" data-slide="prev"><i class="glyphicon glyphicon-chevron-left a"></i></a>
+        <a class="right carousel-control" href="#carousel1210" data-slide="next"><i class="glyphicon glyphicon-chevron-right a"></i></a>
+      </div>
+    </div>
+     </div> 
+      </div>
+       <!-- ---------------------------------------------------  end Lexus --------------------------------- --> 
+       
+       
+                    <!-- ---------------------------------------------------  #Force --------------------------------- -->    
+      <div id="Force" class="tab-pane fade">
+      <h3></h3>
+      <div class="row">
+    <div class="col-md-12">
+      <div class="carousel carousel-showmanymoveone slide" id="carousel1310">
+        <div class="carousel-inner" >
+         <div class="item active">
+            <div class="col-xs-12 col-sm-6 col-md-3 f">
+             <div id="two">
+             <a href="#"><img alt="service" src="images/for1.jpg" class="img-responsive"></a>
+              <div class="text3" style=" background: #fff; padding: 20px 5px 9px 7px; font-size:14px;">
+             <p style="text-align: center;"><span style="font-size:17px;color: #9a2220;">Model :</span><span style="font-size: 17px;"> Gurkha</span></p>
+               </div>
+            </div>
+          </div></div>
+                 
+         
+           
+        </div>
+        <a class="left carousel-control" href="#carousel1310" data-slide="prev"><i class="glyphicon glyphicon-chevron-left a"></i></a>
+        <a class="right carousel-control" href="#carousel1310" data-slide="next"><i class="glyphicon glyphicon-chevron-right a"></i></a>
+      </div>
+    </div>
+     </div> 
+      </div>
+       <!-- ---------------------------------------------------  end Force --------------------------------- --> 
+  </div>
+</div>
+  
+  
+</div>
+  <script src='http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>
+<script src='http://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js'></script>
+<script src="assets/js/car.js"></script>
+
+ <script src="http://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+ <script src="http://netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js"></script>
+ <script src="assets/js/st-demo.js"></script>
+ <script src="assets/js/jquery.scrolling-tabs.js"></script>
+</body>
+</html>

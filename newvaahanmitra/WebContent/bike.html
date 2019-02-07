@@ -1,0 +1,1495 @@
+<!DOCTYPE html>
+<html >
+<head>
+  <meta charset="UTF-8">
+  <title>Bootstrap 3 Show Many Slide One Carousel</title>
+  <link href="assets/images/cg1.png" type="icon/img" rel="icon">
+  <meta name="viewport" content="width=device-width">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
+
+  <link rel='stylesheet prefetch' href='http://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css'>
+  <link rel="stylesheet" href="assets/css/carslider.css">
+  
+  
+ <link rel="stylesheet" href="http://netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css">
+ <link rel="stylesheet" href="assets/css/jquery.scrolling-tabs.css">
+ <link rel="stylesheet" href="assets/css/st-demo.css">
+ 
+<style>
+.one {
+    font-size: 16px;
+    color: #9a2220;
+    font-family: sans-serif;
+    }
+    .text1{
+   background: #9a2220;
+    color: #fff;
+    border: 1px solid #fff;
+    border-radius: 6px;
+    font-size: 15px;
+    padding: 2px 8px;
+    font-family: monospace;
+    font-weight: 500;
+    letter-spacing: 0em;
+}
+#two{
+    border: 1.5px solid #f5f5f5;
+    border-radius: 4px;
+  }
+    #two:hover{
+    border: 1.5px solid #f5f5f5;
+    border-radius: 4px;
+       box-shadow: 0px 0px 10px #9d9d9d;
+    }
+ .nav-tabs>li.active>a, .nav-tabs>li.active>a:focus, .nav-tabs>li.active>a:hover {
+    color: #ffffff;
+    cursor: default;
+    background-color: #9a2220;
+    border: 1px solid #9a2220;
+    border-bottom-color: transparent;
+    font-size: 17px;
+   /*  line-height:7px; */
+    font-family: monospace;
+    margin: 0 2px;
+} 
+.carousel-control.right {
+    right: 0;
+    left: auto;
+    background-image: -webkit-linear-gradient(left,rgba(0,0,0,.0001) 0,rgba(255, 255, 255, 0.5) 100%);
+    background-image: -o-linear-gradient(left,rgba(0,0,0,.0001) 0,rgba(0,0,0,.5) 100%);
+    background-image: -webkit-gradient(linear,left top,right top,from(rgba(0,0,0,.0001)),to(rgba(255, 255, 255, 0.5)));
+    background-image: linear-gradient(to right,rgba(0,0,0,.0001) 0,rgba(255, 255, 255, 0.5) 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#00000000', endColorstr='#80000000', GradientType=1);
+    background-repeat: repeat-x;
+}
+.carousel-control.left {
+    background-image: -webkit-linear-gradient(left,rgba(0,0,0,.5) 0,rgba(0,0,0,.0001) 100%);
+    background-image: -o-linear-gradient(left,rgba(0,0,0,.5) 0,rgba(0,0,0,.0001) 100%);
+    background-image: -webkit-gradient(linear,left top,right top,from(rgba(0,0,0,.5)),to(rgba(255, 255, 255, 0.0001)));
+    background-image: linear-gradient(to right,rgba(255, 255, 255, 0.5) 0,rgba(0,0,0,.0001) 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#80000000', endColorstr='#00000000', GradientType=1);
+    background-repeat: repeat-x;
+}
+carousel-control {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    width: 96%;
+    font-size: 20px;
+    color: #9a2220;
+    text-align: center;
+    text-shadow: 0 1px 2px rgb(154, 34, 32);
+    filter: alpha(opacity=50);
+    opacity: .5;
+} 
+.nav>li>a {
+    position: relative;
+    display: block;
+    padding: 2px 13px;
+} 
+.scrtabs-tab-scroll-arrow {
+  border: 1px solid #dddddd;
+    border-top: none;
+    color: #9a2220;
+    display: none;
+    float: left;
+    font-size: 18px;
+    height: 31px;
+    margin-bottom: 0px;
+    padding-left: 0px;
+    padding-top: 5px;
+    width: 20px;
+}
+.scrtabs-tab-container {
+    height: 22px;
+}
+.nav-tabs {
+    border-bottom: 1px solid #ffffff;
+       margin: 0 0px; 
+}
+.nav-tabs>li>a {
+    margin-right: 2px;
+    line-height: 1.42857143;
+    border: 1px solid transparent;
+    border-radius: 4px 4px 0 0;
+    background: #eee;
+    color: #000;
+    font-family: monospace;
+     font-size: 17px; 
+   /*  line-height: 6px; */
+    margin: 0 2px;
+}
+a:focus, a:hover {
+    color: #23527c;
+    text-decoration: none;
+}
+.one1{
+    color: #9a2220;
+    text-decoration: none;
+    float: right;
+    margin: -3% 1%;
+    font-size: 23px;
+    }
+@media  (max-width:767px){
+.col-x-1 li{
+width:100%;
+text-align: center;
+margin-bottom: 5px;
+}
+.one1{
+    color: #9a2220;
+    text-decoration: none;
+      float: left;
+    margin: 0% 0%;
+    font-size: 23px;
+    }
+}
+
+
+</style> 
+      
+</head>
+
+<body>
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans|Bitter" rel="stylesheet" type="text/css">
+<div class="containe">
+
+<ul class="nav nav-tabs" role="tablist">
+      <li role="presentation" class="active"><a href="#Hero" role="tab" data-toggle="tab">Hero</a></li>
+      <li role="presentation"><a href="#TVS" role="tab" data-toggle="tab">TVS</a></li>
+      <li role="presentation"><a href="#Honda" role="tab" data-toggle="tab">Honda</a></li>
+      <li role="presentation"><a href="#Bajaj" role="tab" data-toggle="tab">Bajaj</a></li>
+      <li role="presentation"><a href="#Yamaha" role="tab" data-toggle="tab">Yamaha</a></li>
+      <li role="presentation"><a href="#Suzuki" role="tab" data-toggle="tab">Suzuki</a></li>
+      <li role="presentation"><a href="#Mahindra" role="tab" data-toggle="tab">Mahindra</a></li>
+      <li role="presentation"><a href="#Royal1" role="tab" data-toggle="tab">Royal Enfield</a></li>
+      <li role="presentation"><a href="#KTM" role="tab" data-toggle="tab">KTM</a></li>
+      <li role="presentation"><a href="#Kawasaki" role="tab" data-toggle="tab">Kawasaki</a></li>
+      <li role="presentation"><a href="#Vespa" role="tab" data-toggle="tab">Vespa</a></li>
+      <li role="presentation"><a href="#Harley1" role="tab" data-toggle="tab">Harley Davidson</a></li>
+      <li role="presentation"><a href="#BMW" role="tab" data-toggle="tab">BMW</a></li>
+       <li role="presentation"><a href="#UM" role="tab" data-toggle="tab">UM</a></li>
+          
+    </ul>
+
+   <div class="tab-content">
+    <div id="Hero" class="tab-pane fade in active">
+      <h3></h3>
+  <div class="row">
+    <div class="col-md-12">
+      <div class="carousel carousel-showmanymoveone slide" id="carousel123">
+        <div class="carousel-inner" ">
+          <div class="item active">
+            <div class="col-xs-12 col-sm-6 col-md-3 f">
+             <div id="two">
+            <a href="#"><img alt="bike" src="images/her1.jpg" class="img-responsive"></a>
+             <div class="text3" style=" background: #fff; padding: 20px 5px 9px 7px; font-size:14px;">
+            <p style="text-align: center;"><span style="font-size:17px;color: #9a2220;">Model :</span><span style="font-size: 17px;"> Splendor i3s</span></p>
+               </div>
+            </div>
+          </div></div>
+                
+          <div class="item">
+            <div class="col-xs-12 col-sm-6 col-md-3 f">
+             <div id="two">
+            <a href="#"><img alt="bike" src="images/her2.jpg" class="img-responsive"></a>
+           <div class="text3" style=" background: #fff; padding: 20px 5px 9px 7px; font-size:14px;">
+            <p style="text-align: center;"><span style="font-size:17px;color: #9a2220;">Model :</span><span style="font-size: 17px;"> Passion Pro</span></p>
+               </div>
+            </div>
+            </div>
+          </div>
+          
+           <div class="item">
+            <div class="col-xs-12 col-sm-6 col-md-3 f">
+             <div id="two">
+            <a href="#"><img alt="bike" src="images/her3.jpg" class="img-responsive"></a>
+           <div class="text3" style=" background: #fff; padding: 20px 5px 9px 7px; font-size:14px;">
+            <p style="text-align: center;"><span style="font-size:17px;color: #9a2220;">Model :</span><span style="font-size: 17px;">  Duet</span></p>
+               </div>
+            </div>
+            </div>
+          </div>
+          
+           <div class="item">
+            <div class="col-xs-12 col-sm-6 col-md-3 f">
+             <div id="two">
+            <a href="#"><img alt="bike" src="images/her4.jpg" class="img-responsive"></a>
+           <div class="text3" style=" background: #fff; padding: 20px 5px 9px 7px; font-size:14px;">
+            <p style="text-align: center;"><span style="font-size:17px;color: #9a2220;">Model :</span><span style="font-size: 17px;"> Glamour</span></p>
+               </div>
+            </div>
+            </div>
+          </div>
+          
+         <div class="item">
+            <div class="col-xs-12 col-sm-6 col-md-3 f">
+             <div id="two">
+            <a href="#"><img alt="bike" src="images/her5.jpg" class="img-responsive"></a>
+           <div class="text3" style=" background: #fff; padding: 20px 5px 9px 7px; font-size:14px;">
+            <p style="text-align: center;"><span style="font-size:17px;color: #9a2220;">Model :</span><span style="font-size: 17px;">Maestro Edge</span></p>
+               </div>
+            </div>
+            </div>
+          </div>
+          
+          <div class="item">
+            <div class="col-xs-12 col-sm-6 col-md-3 f">
+             <div id="two">
+            <a href="#"><img alt="bike" src="images/her6.jpg" class="img-responsive"></a>
+           <div class="text3" style=" background: #fff; padding: 20px 5px 9px 7px; font-size:14px;">
+            <p style="text-align: center;"><span style="font-size:17px;color: #9a2220;">Model :</span><span style="font-size: 17px;"> Pleasure</span></p>
+               </div>
+            </div>
+            </div>
+          </div>
+          
+           <div class="item">
+            <div class="col-xs-12 col-sm-6 col-md-3 f">
+             <div id="two">
+            <a href="#"><img alt="bike" src="images/her7.jpg" class="img-responsive"></a>
+           <div class="text3" style=" background: #fff; padding: 20px 5px 9px 7px; font-size:14px;">
+            <p style="text-align: center;"><span style="font-size:17px;color: #9a2220;">Model :</span><span style="font-size: 17px;"> Splendor</span></p>
+               </div>
+            </div>
+            </div>
+          </div>
+          
+           <div class="item">
+            <div class="col-xs-12 col-sm-6 col-md-3 f">
+             <div id="two">
+            <a href="#"><img alt="bike" src="images/her8.jpg" class="img-responsive"></a>
+           <div class="text3" style=" background: #fff; padding: 20px 5px 9px 7px; font-size:14px;">
+            <p style="text-align: center;"><span style="font-size:17px;color: #9a2220;">Model :</span><span style="font-size: 17px;"> HF Deluxe</span></p>
+               </div>
+            </div>
+            </div>
+          </div>
+         
+          <div class="item">
+            <div class="col-xs-12 col-sm-6 col-md-3 f">
+             <div id="two">
+            <a href="#"><img alt="bike" src="images/her9.jpg" class="img-responsive"></a>
+           <div class="text3" style=" background: #fff; padding: 20px 5px 9px 7px; font-size:14px;">
+            <p style="text-align: center;"><span style="font-size:17px;color: #9a2220;">Model :</span><span style="font-size: 17px;"> Extreme Sport</span></p>
+               </div>
+            </div>
+            </div>
+          </div>
+          
+           <div class="item">
+            <div class="col-xs-12 col-sm-6 col-md-3 f">
+             <div id="two">
+            <a href="#"><img alt="bike" src="images/her10.jpg" class="img-responsive"></a>
+           <div class="text3" style=" background: #fff; padding: 20px 5px 9px 7px; font-size:14px;">
+            <p style="text-align: center;"><span style="font-size:17px;color: #9a2220;">Model :</span><span style="font-size: 17px;"> Achiever 150</span></p>
+               </div>
+            </div>
+            </div>
+          </div>
+          
+           <div class="item">
+            <div class="col-xs-12 col-sm-6 col-md-3 f">
+             <div id="two">
+            <a href="#"><img alt="bike" src="images/her11.jpg" class="img-responsive"></a>
+           <div class="text3" style=" background: #fff; padding: 20px 5px 9px 7px; font-size:14px;">
+            <p style="text-align: center;"><span style="font-size:17px;color: #9a2220;">Model :</span><span style="font-size: 17px;">  Dawn</span></p>
+               </div>
+            </div>
+            </div>
+          </div>
+          
+           <div class="item">
+            <div class="col-xs-12 col-sm-6 col-md-3 f">
+             <div id="two">
+            <a href="#"><img alt="bike" src="images/her12.jpg" class="img-responsive"></a>
+           <div class="text3" style=" background: #fff; padding: 20px 5px 9px 7px; font-size:14px;">
+            <p style="text-align: center;"><span style="font-size:17px;color: #9a2220;">Model :</span><span style="font-size: 17px;">Hf Deluxe Eco</span></p>
+               </div>
+            </div>
+            </div>
+          </div>
+          
+            <div class="item">
+            <div class="col-xs-12 col-sm-6 col-md-3 f">
+             <div id="two">
+            <a href="#"><img alt="bike" src="images/her13.jpg" class="img-responsive"></a>
+           <div class="text3" style=" background: #fff; padding: 20px 5px 9px 7px; font-size:14px;">
+            <p style="text-align: center;"><span style="font-size:17px;color: #9a2220;">Model :</span><span style="font-size: 17px;">Splendor Ismart</span></p>
+               </div>
+            </div>
+            </div>
+          </div>
+         
+        </div>
+        <a class="left carousel-control" href="#carousel123" data-slide="prev"><i  class="glyphicon glyphicon-chevron-left a"></i></a>
+        <a class="right carousel-control" href="#carousel123" data-slide="next"><i class="glyphicon glyphicon-chevron-right a"></i></a>
+      </div>
+    </div>
+  </div>
+</div>
+
+     <div id="TVS" class="tab-pane fade">
+    <h3></h3>
+  <div class="row">
+    <div class="col-md-12">
+      <div class="carousel carousel-showmanymoveone slide" id="carousel1238">
+        <div class="carousel-inner" ">
+          <div class="item active">
+            <div class="col-xs-12 col-sm-6 col-md-3 f">
+             <div id="two">
+            <a href="#"><img alt="bike" src="images/tv1.jpg" class="img-responsive"></a>
+             <div class="text3" style=" background: #fff; padding: 20px 5px 9px 7px; font-size:14px;">
+              <p style="text-align: center;"><span style="font-size:17px;color: #9a2220;">Model :</span><span style="font-size: 17px;">Apache-RR 310</span></p>
+               </div>
+            </div>
+          </div></div>
+                
+          <div class="item">
+            <div class="col-xs-12 col-sm-6 col-md-3 f">
+             <div id="two">
+            <a href="#"><img alt="bike" src="images/tv2.jpg" class="img-responsive"></a>
+           <div class="text3" style=" background: #fff; padding: 20px 5px 9px 7px; font-size:14px;">
+              <p style="text-align: center;"><span style="font-size:17px;color: #9a2220;">Model :</span><span style="font-size: 17px;">Apache-RTR 180</span></p>
+               </div>
+            </div>
+            </div>
+          </div>
+          
+       <div class="item">
+            <div class="col-xs-12 col-sm-6 col-md-3 f">
+             <div id="two">
+            <a href="#"><img alt="bike" src="images/tv3.jpg" class="img-responsive"></a>
+           <div class="text3" style=" background: #fff; padding: 20px 5px 9px 7px; font-size:14px;">
+              <p style="text-align: center;"><span style="font-size:17px;color: #9a2220;">Model :</span><span style="font-size: 17px;">Starcity Plus</span></p>
+               </div>
+            </div>
+            </div>
+          </div>
+          
+         <div class="item">
+            <div class="col-xs-12 col-sm-6 col-md-3 f">
+             <div id="two">
+            <a href="#"><img alt="bike" src="images/tv4.jpg" class="img-responsive"></a>
+           <div class="text3" style=" background: #fff; padding: 20px 5px 9px 7px; font-size:14px;">
+              <p style="text-align: center;"><span style="font-size:17px;color: #9a2220;">Model :</span><span style="font-size: 17px;">Jupiter</span></p>
+               </div>
+            </div>
+            </div>
+          </div>
+          
+          <div class="item">
+            <div class="col-xs-12 col-sm-6 col-md-3 f">
+             <div id="two">
+            <a href="#"><img alt="bike" src="images/tv5.jpg" class="img-responsive"></a>
+           <div class="text3" style=" background: #fff; padding: 20px 5px 9px 7px; font-size:14px;">
+              <p style="text-align: center;"><span style="font-size:17px;color: #9a2220;">Model :</span><span style="font-size: 17px;">Ntorq 125</span></p>
+               </div>
+            </div>
+            </div>
+          </div>
+          
+          <div class="item">
+            <div class="col-xs-12 col-sm-6 col-md-3 f">
+             <div id="two">
+            <a href="#"><img alt="bike" src="images/tv6.jpg" class="img-responsive"></a>
+           <div class="text3" style=" background: #fff; padding: 20px 5px 9px 7px; font-size:14px;">
+              <p style="text-align: center;"><span style="font-size:17px;color: #9a2220;">Model :</span><span style="font-size: 17px;">Scooty Zest</span></p>
+               </div>
+            </div>
+            </div>
+          </div>
+          
+          <div class="item">
+            <div class="col-xs-12 col-sm-6 col-md-3 f">
+             <div id="two">
+            <a href="#"><img alt="bike" src="images/tv7.jpg" class="img-responsive"></a>
+           <div class="text3" style=" background: #fff; padding: 20px 5px 9px 7px; font-size:14px;">
+              <p style="text-align: center;"><span style="font-size:17px;color: #9a2220;">Model :</span><span style="font-size: 17px;"> Scooty Pep Plus</span></p>
+               </div>
+            </div>
+            </div>
+          </div>
+          
+          
+          <div class="item">
+            <div class="col-xs-12 col-sm-6 col-md-3 f">
+             <div id="two">
+            <a href="#"><img alt="bike" src="images/tv8.jpg" class="img-responsive"></a>
+           <div class="text3" style=" background: #fff; padding: 20px 5px 9px 7px; font-size:14px;">
+              <p style="text-align: center;"><span style="font-size:17px;color: #9a2220;">Model :</span><span style="font-size: 17px;">Sport</span></p>
+               </div>
+            </div>
+            </div>
+          </div>
+          
+           <div class="item">
+            <div class="col-xs-12 col-sm-6 col-md-3 f">
+             <div id="two">
+            <a href="#"><img alt="bike" src="images/tv9.jpg" class="img-responsive"></a>
+           <div class="text3" style=" background: #fff; padding: 20px 5px 9px 7px; font-size:14px;">
+              <p style="text-align: center;"><span style="font-size:17px;color: #9a2220;">Model :</span><span style="font-size: 17px;">XL 100</span></p>
+               </div>
+            </div>
+            </div>
+          </div>
+          
+          
+           <div class="item">
+            <div class="col-xs-12 col-sm-6 col-md-3 f">
+             <div id="two">
+            <a href="#"><img alt="bike" src="images/tv10.jpg" class="img-responsive"></a>
+           <div class="text3" style=" background: #fff; padding: 20px 5px 9px 7px; font-size:14px;">
+              <p style="text-align: center;"><span style="font-size:17px;color: #9a2220;">Model :</span><span style="font-size: 17px;">Apache-Victor</span></p>
+               </div>
+            </div>
+            </div>
+          </div>
+          
+           <div class="item">
+            <div class="col-xs-12 col-sm-6 col-md-3 f">
+             <div id="two">
+            <a href="#"><img alt="bike" src="images/tv11.jpg" class="img-responsive"></a>
+             <div class="text3" style=" background: #fff; padding: 20px 5px 9px 7px; font-size:14px;">
+               <p style="text-align: center;"><span style="font-size:17px;color: #9a2220;">Model :</span><span style="font-size: 17px;">Wego</span></p>
+               </div>
+            </div>
+            </div>
+          </div>
+          
+         
+        </div>
+        <a class="left carousel-control" href="#carousel1238" data-slide="prev"><i  class="glyphicon glyphicon-chevron-left a"></i></a>
+        <a class="right carousel-control" href="#carousel1238" data-slide="next"><i class="glyphicon glyphicon-chevron-right a"></i></a>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+    <div id="Honda" class="tab-pane fade">
+      <h3></h3>
+   <div class="row">
+    <div class="col-md-12">
+      <div class="carousel carousel-showmanymoveone slide" id="carousel1235">
+        <div class="carousel-inner" ">
+          <div class="item active">
+            <div class="col-xs-12 col-sm-6 col-md-3 f">
+             <div id="two">
+            <a href="#"><img alt="bike" src="images/hon1.jpg" class="img-responsive"></a>
+             <div class="text3" style=" background: #fff; padding: 20px 5px 9px 7px;
+            font-size:14px;">
+                <p style="text-align: center;"><span style="font-size:17px;color: #9a2220;">Model :</span><span style="font-size: 17px;">Activa 125</span></p>
+               </div>
+            </div>
+          </div></div>
+                
+          <div class="item">
+            <div class="col-xs-12 col-sm-6 col-md-3 f">
+             <div id="two">
+            <a href="#"><img alt="bike" src="images/hon2.jpg" class="img-responsive"></a>
+           <div class="text3" style=" background: #fff; padding: 20px 5px 9px 7px; font-size:14px;">
+              <p style="text-align: center;"><span style="font-size:17px;color: #9a2220;">Model :</span><span style="font-size: 17px;"> CB Shine</span></p>
+               </div>
+            </div>
+            </div>
+          </div>
+          
+           <div class="item">
+            <div class="col-xs-12 col-sm-6 col-md-3 f">
+             <div id="two">
+            <a href="#"><img alt="bike" src="images/hon3.jpg" class="img-responsive"></a>
+           <div class="text3" style=" background: #fff; padding: 20px 5px 9px 7px; font-size:14px;">
+              <p style="text-align: center;"><span style="font-size:17px;color: #9a2220;">Model :</span><span style="font-size: 17px;"> CB Unicorn 160</span></p>
+               </div>
+            </div>
+            </div>
+          </div>
+          
+           <div class="item">
+            <div class="col-xs-12 col-sm-6 col-md-3 f">
+             <div id="two">
+            <a href="#"><img alt="bike" src="images/hon4.jpg" class="img-responsive"></a>
+           <div class="text3" style=" background: #fff; padding: 20px 5px 9px 7px; font-size:14px;">
+              <p style="text-align: center;"><span style="font-size:17px;color: #9a2220;">Model :</span><span style="font-size: 17px;"> Aviato</span></p>
+               </div>
+            </div>
+            </div>
+          </div>
+          
+          <div class="item">
+            <div class="col-xs-12 col-sm-6 col-md-3 f">
+             <div id="two">
+            <a href="#"><img alt="bike" src="images/hon5.jpg" class="img-responsive"></a>
+           <div class="text3" style=" background: #fff; padding: 20px 5px 9px 7px; font-size:14px;">
+              <p style="text-align: center;"><span style="font-size:17px;color: #9a2220;">Model :</span><span style="font-size: 17px;">  CD110 Dream</span></p>
+               </div>
+            </div>
+            </div>
+          </div>
+          
+          <div class="item">
+            <div class="col-xs-12 col-sm-6 col-md-3 f">
+             <div id="two">
+            <a href="#"><img alt="bike" src="images/hon6.jpg" class="img-responsive"></a>
+           <div class="text3" style=" background: #fff; padding: 20px 5px 9px 7px; font-size:14px;">
+              <p style="text-align: center;"><span style="font-size:17px;color: #9a2220;">Model :</span><span style="font-size: 17px;"> Dio</span></p>
+               </div>
+            </div>
+            </div>
+          </div>
+          
+           
+          <div class="item">
+            <div class="col-xs-12 col-sm-6 col-md-3 f">
+             <div id="two">
+            <a href="#"><img alt="bike" src="images/hon7.jpg" class="img-responsive"></a>
+           <div class="text3" style=" background: #fff; padding: 20px 5px 9px 7px; font-size:14px;">
+              <p style="text-align: center;"><span style="font-size:17px;color: #9a2220;">Model :</span><span style="font-size: 17px;"> Livo</span></p>
+               </div>
+            </div>
+            </div>
+          </div>
+          
+           
+          <div class="item">
+            <div class="col-xs-12 col-sm-6 col-md-3 f">
+             <div id="two">
+            <a href="#"><img alt="bike" src="images/hon8.jpg" class="img-responsive"></a>
+           <div class="text3" style=" background: #fff; padding: 20px 5px 9px 7px; font-size:14px;">
+              <p style="text-align: center;"><span style="font-size:17px;color: #9a2220;">Model :</span><span style="font-size: 17px;">  X Blade</span></p>
+               </div>
+            </div>
+            </div>
+          </div>
+         
+         
+        </div>
+        <a class="left carousel-control" href="#carousel1235" data-slide="prev"><i  class="glyphicon glyphicon-chevron-left a"></i></a>
+        <a class="right carousel-control" href="#carousel1235" data-slide="next"><i class="glyphicon glyphicon-chevron-right a"></i></a>
+      </div>
+    </div>
+  </div>
+    </div>
+    
+    <div id="Bajaj" class="tab-pane fade">
+   <div class="row">
+    <div class="col-md-12">
+      <div class="carousel carousel-showmanymoveone slide" id="carousel1236">
+        <div class="carousel-inner" ">
+          <div class="item active">
+            <div class="col-xs-12 col-sm-6 col-md-3 f">
+             <div id="two">
+            <a href="#"><img alt="bike" src="images/ba1.jpg" class="img-responsive"></a>
+             <div class="text3" style=" background: #fff; padding: 20px 5px 9px 7px; font-size:14px;">
+             <p style="text-align: center;"><span style="font-size:17px;color: #9a2220;">Model :</span><span style="font-size: 17px;">  Discover 110</span></p>
+               </div>
+            </div>
+          </div></div>
+                
+          <div class="item">
+            <div class="col-xs-12 col-sm-6 col-md-3 f">
+             <div id="two">
+            <a href="#"><img alt="bike" src="images/ba2.jpg" class="img-responsive"></a>
+           <div class="text3" style=" background: #fff; padding: 20px 5px 9px 7px; font-size:14px;">
+             <p style="text-align: center;"><span style="font-size:17px;color: #9a2220;">Model :</span><span style="font-size: 17px;">  Avenger 220</span></p>
+               </div>
+            </div>
+            </div>
+          </div>
+          
+           <div class="item">
+            <div class="col-xs-12 col-sm-6 col-md-3 f">
+             <div id="two">
+            <a href="#"><img alt="bike" src="images/ba3.jpg" class="img-responsive"></a>
+           <div class="text3" style=" background: #fff; padding: 20px 5px 9px 7px; font-size:14px;">
+             <p style="text-align: center;"><span style="font-size:17px;color: #9a2220;">Model :</span><span style="font-size: 17px;">  V12</span></p>
+               </div>
+            </div>
+            </div>
+          </div>
+          
+           <div class="item">
+            <div class="col-xs-12 col-sm-6 col-md-3 f">
+             <div id="two">
+            <a href="#"><img alt="bike" src="images/ba4.jpg" class="img-responsive"></a>
+           <div class="text3" style=" background: #fff; padding: 20px 5px 9px 7px; font-size:14px;">
+             <p style="text-align: center;"><span style="font-size:17px;color: #9a2220;">Model :</span><span style="font-size: 17px;">  Discover 125</span></p>
+               </div>
+            </div>
+            </div>
+          </div>
+         
+           <div class="item">
+            <div class="col-xs-12 col-sm-6 col-md-3 f">
+             <div id="two">
+            <a href="#"><img alt="bike" src="images/ba5.jpg" class="img-responsive"></a>
+           <div class="text3" style=" background: #fff; padding: 20px 5px 9px 7px; font-size:14px;">
+             <p style="text-align: center;"><span style="font-size:17px;color: #9a2220;">Model :</span><span style="font-size: 17px;">   Platina</span></p>
+               </div>
+            </div>
+            </div>
+          </div>
+          
+            <div class="item">
+            <div class="col-xs-12 col-sm-6 col-md-3 f">
+             <div id="two">
+            <a href="#"><img alt="bike" src="images/ba6.jpg" class="img-responsive"></a>
+           <div class="text3" style=" background: #fff; padding: 20px 5px 9px 7px; font-size:14px;">
+             <p style="text-align: center;"><span style="font-size:17px;color: #9a2220;">Model :</span><span style="font-size: 17px;">  Pulsar 180</span></p>
+               </div>
+            </div>
+            </div>
+          </div>
+          
+            <div class="item">
+            <div class="col-xs-12 col-sm-6 col-md-3 f">
+             <div id="two">
+            <a href="#"><img alt="bike" src="images/ba7.jpg" class="img-responsive"></a>
+           <div class="text3" style=" background: #fff; padding: 20px 5px 9px 7px; font-size:14px;">
+             <p style="text-align: center;"><span style="font-size:17px;color: #9a2220;">Model :</span><span style="font-size: 17px;"> Pulsar NS 160</span></p>
+               </div>
+            </div>
+            </div>
+          </div>
+          
+            <div class="item">
+            <div class="col-xs-12 col-sm-6 col-md-3 f">
+             <div id="two">
+            <a href="#"><img alt="bike" src="images/ba8.jpg" class="img-responsive"></a>
+           <div class="text3" style=" background: #fff; padding: 20px 5px 9px 7px; font-size:14px;">
+             <p style="text-align: center;"><span style="font-size:17px;color: #9a2220;">Model :</span><span style="font-size: 17px;">  Pulsar 125 LS</span></p>
+               </div>
+            </div>
+            </div>
+          </div>
+          
+           <div class="item">
+            <div class="col-xs-12 col-sm-6 col-md-3 f">
+             <div id="two">
+            <a href="#"><img alt="bike" src="images/ba9.jpg" class="img-responsive"></a>
+           <div class="text3" style=" background: #fff; padding: 20px 5px 9px 7px; font-size:14px;">
+             <p style="text-align: center;"><span style="font-size:17px;color: #9a2220;">Model :</span><span style="font-size: 17px;"> Avenger Cruise 220</span></p>
+               </div>
+            </div>
+            </div>
+          </div>
+          
+           <div class="item">
+            <div class="col-xs-12 col-sm-6 col-md-3 f">
+             <div id="two">
+            <a href="#"><img alt="bike" src="images/ba10.jpg" class="img-responsive"></a>
+           <div class="text3" style=" background: #fff; padding: 20px 5px 9px 7px; font-size:14px;">
+             <p style="text-align: center;"><span style="font-size:17px;color: #9a2220;">Model :</span><span style="font-size: 17px;"> Dominor 400</span></p>
+               </div>
+            </div>
+            </div>
+          </div>
+         
+         
+        </div>
+        <a class="left carousel-control" href="#carousel1236" data-slide="prev"><i  class="glyphicon glyphicon-chevron-left a"></i></a>
+        <a class="right carousel-control" href="#carousel1236" data-slide="next"><i class="glyphicon glyphicon-chevron-right a"></i></a>
+      </div>
+    </div>
+  </div>
+    </div>
+    
+    <div id="Yamaha" class="tab-pane fade">
+     <div class="row">
+    <div class="col-md-12">
+      <div class="carousel carousel-showmanymoveone slide" id="carousel1237">
+        <div class="carousel-inner" ">
+          <div class="item active">
+            <div class="col-xs-12 col-sm-6 col-md-3 f">
+             <div id="two">
+            <a href="#"><img alt="bike" src="images/ya1.jpg" class="img-responsive"></a>
+             <div class="text3" style=" background: #fff; padding: 20px 5px 9px 7px; font-size:14px;">
+             <p style="text-align: center;"><span style="font-size:17px;color: #9a2220;">Model :</span><span style="font-size: 17px;">  FZ V2.0</span></p>
+               </div>
+            </div>
+          </div></div>
+                
+          <div class="item">
+            <div class="col-xs-12 col-sm-6 col-md-3 f">
+             <div id="two">
+            <a href="#"><img alt="bike" src="images/ya2.jpg" class="img-responsive"></a>
+           <div class="text3" style=" background: #fff; padding: 20px 5px 9px 7px; font-size:14px;">
+             <p style="text-align: center;"><span style="font-size:17px;color: #9a2220;">Model :</span><span style="font-size: 17px;"> SZ RR V2.0</span></p>
+               </div>
+            </div>
+            </div>
+          </div>
+          
+          <div class="item">
+            <div class="col-xs-12 col-sm-6 col-md-3 f">
+             <div id="two">
+            <a href="#"><img alt="bike" src="images/ya3.jpg" class="img-responsive"></a>
+           <div class="text3" style=" background: #fff; padding: 20px 5px 9px 7px; font-size:14px;">
+             <p style="text-align: center;"><span style="font-size:17px;color: #9a2220;">Model :</span><span style="font-size: 17px;"> Fazer25</span></p>
+               </div>
+            </div>
+            </div>
+          </div>
+          
+          <div class="item">
+            <div class="col-xs-12 col-sm-6 col-md-3 f">
+             <div id="two">
+            <a href="#"><img alt="bike" src="images/ya4.jpg" class="img-responsive"></a>
+           <div class="text3" style=" background: #fff; padding: 20px 5px 9px 7px; font-size:14px;">
+             <p style="text-align: center;"><span style="font-size:17px;color: #9a2220;">Model :</span><span style="font-size: 17px;"> Fascino</span></p>
+               </div>
+            </div>
+            </div>
+          </div>
+          
+          
+            <div class="item">
+            <div class="col-xs-12 col-sm-6 col-md-3 f">
+             <div id="two">
+            <a href="#"><img alt="bike" src="images/ya5.jpg" class="img-responsive"></a>
+           <div class="text3" style=" background: #fff; padding: 20px 5px 9px 7px; font-size:14px;">
+             <p style="text-align: center;"><span style="font-size:17px;color: #9a2220;">Model :</span><span style="font-size: 17px;">  Alpha</span></p>
+               </div>
+            </div>
+            </div>
+          </div>
+          
+          
+            <div class="item">
+            <div class="col-xs-12 col-sm-6 col-md-3 f">
+             <div id="two">
+            <a href="#"><img alt="bike" src="images/ya6.jpg" class="img-responsive"></a>
+           <div class="text3" style=" background: #fff; padding: 20px 5px 9px 7px; font-size:14px;">
+             <p style="text-align: center;"><span style="font-size:17px;color: #9a2220;">Model :</span><span style="font-size: 17px;"> FZ Fi</span></p>
+               </div>
+            </div>
+            </div>
+          </div>
+          
+           <div class="item">
+            <div class="col-xs-12 col-sm-6 col-md-3 f">
+             <div id="two">
+            <a href="#"><img alt="bike" src="images/ya7.jpg" class="img-responsive"></a>
+           <div class="text3" style=" background: #fff; padding: 20px 5px 9px 7px; font-size:14px;">
+             <p style="text-align: center;"><span style="font-size:17px;color: #9a2220;">Model :</span><span style="font-size: 17px;"> Saluto RX</span></p>
+               </div>
+            </div>
+            </div>
+          </div>
+          
+           <div class="item">
+            <div class="col-xs-12 col-sm-6 col-md-3 f">
+             <div id="two">
+            <a href="#"><img alt="bike" src="images/ya8.jpg" class="img-responsive"></a>
+           <div class="text3" style=" background: #fff; padding: 20px 5px 9px 7px; font-size:14px;">
+             <p style="text-align: center;"><span style="font-size:17px;color: #9a2220;">Model :</span><span style="font-size: 17px;"> YFZ R15 V3</span></p>
+               </div>
+            </div>
+            </div>
+          </div>
+          
+           <div class="item">
+            <div class="col-xs-12 col-sm-6 col-md-3 f">
+             <div id="two">
+            <a href="#"><img alt="bike" src="images/ya9.jpg" class="img-responsive"></a>
+           <div class="text3" style=" background: #fff; padding: 20px 5px 9px 7px; font-size:14px;">
+             <p style="text-align: center;"><span style="font-size:17px;color: #9a2220;">Model :</span><span style="font-size: 17px;"> Cygnus Ray ZR</span></p>
+               </div>
+            </div>
+            </div>
+          </div>
+          
+         
+         
+        </div>
+        <a class="left carousel-control" href="#carousel1237" data-slide="prev"><i  class="glyphicon glyphicon-chevron-left a"></i></a>
+        <a class="right carousel-control" href="#carousel1237" data-slide="next"><i class="glyphicon glyphicon-chevron-right a"></i></a>
+      </div>
+    </div>
+  </div>
+   
+    </div>
+    
+    <div id="Suzuki" class="tab-pane fade">
+    <h3></h3>
+    <div class="row">
+    <div class="col-md-12">
+      <div class="carousel carousel-showmanymoveone slide" id="carousel1230">
+        <div class="carousel-inner" ">
+          <div class="item active">
+            <div class="col-xs-12 col-sm-6 col-md-3 f">
+             <div id="two">
+            <a href="#"><img alt="bike" src="images/suz1.jpg" class="img-responsive"></a>
+             <div class="text3" style=" background: #fff; padding: 20px 5px 9px 7px;font-size:14px;">
+             <p style="text-align: center;"><span style="font-size:17px;color: #9a2220;">Model :</span><span style="font-size: 17px;">  Access 125</span></p>
+               </div>
+            </div>
+          </div></div>
+                
+          <div class="item">
+            <div class="col-xs-12 col-sm-6 col-md-3 f">
+             <div id="two">
+            <a href="#"><img alt="bike" src="images/suz2.jpg" class="img-responsive"></a>
+           <div class="text3" style=" background: #fff; padding: 20px 5px 9px 7px; font-size:14px;">
+             <p style="text-align: center;"><span style="font-size:17px;color: #9a2220;">Model :</span><span style="font-size: 17px;"> Hayate EP</span></p>
+               </div>
+            </div>
+            </div>
+          </div>
+          
+          <div class="item">
+            <div class="col-xs-12 col-sm-6 col-md-3 f">
+             <div id="two">
+            <a href="#"><img alt="bike" src="images/suz3.jpg" class="img-responsive"></a>
+           <div class="text3" style=" background: #fff; padding: 20px 5px 9px 7px; font-size:14px;">
+             <p style="text-align: center;"><span style="font-size:17px;color: #9a2220;">Model :</span><span style="font-size: 17px;"> Gixxer</span></p>
+               </div>
+            </div>
+            </div>
+          </div>
+          
+          <div class="item">
+            <div class="col-xs-12 col-sm-6 col-md-3 f">
+             <div id="two">
+            <a href="#"><img alt="bike" src="images/suz4.jpg" class="img-responsive"></a>
+           <div class="text3" style=" background: #fff; padding: 20px 5px 9px 7px; font-size:14px;">
+             <p style="text-align: center;"><span style="font-size:17px;color: #9a2220;">Model :</span><span style="font-size: 17px;"> Lets</span></p>
+               </div>
+            </div>
+            </div>
+          </div>
+          
+           <div class="item">
+            <div class="col-xs-12 col-sm-6 col-md-3 f">
+             <div id="two">
+            <a href="#"><img alt="bike" src="images/suz5.jpg" class="img-responsive"></a>
+           <div class="text3" style=" background: #fff; padding: 20px 5px 9px 7px; font-size:14px;">
+             <p style="text-align: center;"><span style="font-size:17px;color: #9a2220;">Model :</span><span style="font-size: 17px;">  GSX S1000</span></p>
+               </div>
+            </div>
+            </div>
+          </div>
+          
+           <div class="item">
+            <div class="col-xs-12 col-sm-6 col-md-3 f">
+             <div id="two">
+            <a href="#"><img alt="bike" src="images/suz6.jpg" class="img-responsive"></a>
+           <div class="text3" style=" background: #fff; padding: 20px 5px 9px 7px; font-size:14px;">
+             <p style="text-align: center;"><span style="font-size:17px;color: #9a2220;">Model :</span><span style="font-size: 17px;"> Intruder 150</span></p>
+               </div>
+            </div>
+            </div>
+          </div>
+          
+           <div class="item">
+            <div class="col-xs-12 col-sm-6 col-md-3 f">
+             <div id="two">
+            <a href="#"><img alt="bike" src="images/suz7.jpg" class="img-responsive"></a>
+           <div class="text3" style=" background: #fff; padding: 20px 5px 9px 7px; font-size:14px;">
+             <p style="text-align: center;"><span style="font-size:17px;color: #9a2220;">Model :</span><span style="font-size: 17px;"> VStrom 10000</span></p>
+               </div>
+            </div>
+            </div>
+          </div>
+          
+         
+        
+         
+        </div>
+        <a class="left carousel-control" href="#carousel1230" data-slide="prev"><i  class="glyphicon glyphicon-chevron-left a"></i></a>
+        <a class="right carousel-control" href="#carousel1230" data-slide="next"><i class="glyphicon glyphicon-chevron-right a"></i></a>
+      </div>
+    </div>
+  </div>
+    </div>
+    
+    
+    <div id="Mahindra" class="tab-pane fade">
+    <h3></h3>
+   <div class="row">
+    <div class="col-md-12">
+      <div class="carousel carousel-showmanymoveone slide" id="carousel121">
+        <div class="carousel-inner" ">
+          <div class="item active">
+            <div class="col-xs-12 col-sm-6 col-md-3 f">
+             <div id="two">
+            <a href="#"><img alt="bike" src="images/mah1.jpg" class="img-responsive"></a>
+             <div class="text3" style=" background: #fff; padding: 20px 5px 9px 7px; font-size:14px;">
+             <p style="text-align: center;"><span style="font-size:17px;color: #9a2220;">Model :</span><span style="font-size: 17px;"> Centuro</span></p>
+               </div>
+            </div>
+          </div></div>
+                
+          <div class="item">
+            <div class="col-xs-12 col-sm-6 col-md-3 f">
+             <div id="two">
+            <a href="#"><img alt="bike" src="images/mah2.jpg" class="img-responsive"></a>
+           <div class="text3" style=" background: #fff; padding: 20px 5px 9px 7px; font-size:14px;">
+             <p style="text-align: center;"><span style="font-size:17px;color: #9a2220;">Model :</span><span style="font-size: 17px;">  Gusto</span></p>
+               </div>
+            </div>
+            </div>
+          </div>
+          
+           <div class="item">
+            <div class="col-xs-12 col-sm-6 col-md-3 f">
+             <div id="two">
+            <a href="#"><img alt="bike" src="images/mah3.jpg" class="img-responsive"></a>
+           <div class="text3" style=" background: #fff; padding: 20px 5px 9px 7px; font-size:14px;">
+             <p style="text-align: center;"><span style="font-size:17px;color: #9a2220;">Model :</span><span style="font-size: 17px;">  Gusto 125</span></p>
+               </div>
+            </div>
+            </div>
+          </div>
+          
+           <div class="item">
+            <div class="col-xs-12 col-sm-6 col-md-3 f">
+             <div id="two">
+            <a href="#"><img alt="bike" src="images/mah4.jpg" class="img-responsive"></a>
+           <div class="text3" style=" background: #fff; padding: 20px 5px 9px 7px; font-size:14px;">
+             <p style="text-align: center;"><span style="font-size:17px;color: #9a2220;">Model :</span><span style="font-size: 17px;">   Mojo UT300</span></p>
+               </div>
+            </div>
+            </div>
+          </div>
+          
+            <div class="item">
+            <div class="col-xs-12 col-sm-6 col-md-3 f">
+             <div id="two">
+            <a href="#"><img alt="bike" src="images/mah5.jpg" class="img-responsive"></a>
+           <div class="text3" style=" background: #fff; padding: 20px 5px 9px 7px; font-size:14px;">
+             <p style="text-align: center;"><span style="font-size:17px;color: #9a2220;">Model :</span><span style="font-size: 17px;">  Mojo XT300</span></p>
+               </div>
+            </div>
+            </div>
+          </div>
+          
+        
+        </div>
+        <a class="left carousel-control" href="#carousel121" data-slide="prev"><i  class="glyphicon glyphicon-chevron-left a"></i></a>
+        <a class="right carousel-control" href="#carousel121" data-slide="next"><i class="glyphicon glyphicon-chevron-right a"></i></a>
+      </div>
+    </div>
+  </div>
+    </div>
+     <!-- ---------------------------------------------  Royal Enfield ------------------------------ --> 
+    <div id="Royal1" class="tab-pane fade">
+    <h3></h3>
+      <div class="row">
+    <div class="col-md-12">
+      <div class="carousel carousel-showmanymoveone slide" id="carousel211">
+        <div class="carousel-inner" ">
+          <div class="item active">
+            <div class="col-xs-12 col-sm-6 col-md-3 f">
+             <div id="two">
+            <a href="#"><img alt="bike" src="images/ry1.jpg" class="img-responsive"></a>
+             <div class="text3" style=" background: #fff; padding: 20px 5px 9px 7px; font-size:14px;">
+             <p style="text-align: center;"><span style="font-size:17px;color: #9a2220;">Model :</span><span style="font-size: 17px;">  Bullet 350</span></p>
+               </div>
+            </div>
+          </div></div>
+                
+          <div class="item">
+            <div class="col-xs-12 col-sm-6 col-md-3 f">
+             <div id="two">
+            <a href="#"><img alt="bike" src="images/ry2.jpg" class="img-responsive"></a>
+           <div class="text3" style=" background: #fff; padding: 20px 5px 9px 7px; font-size:14px;">
+             <p style="text-align: center;"><span style="font-size:17px;color: #9a2220;">Model :</span><span style="font-size: 17px;">  Classic 350</span></p>
+               </div>
+            </div>
+            </div>
+          </div>
+          
+           <div class="item">
+            <div class="col-xs-12 col-sm-6 col-md-3 f">
+             <div id="two">
+            <a href="#"><img alt="bike" src="images/ry3.jpg" class="img-responsive"></a>
+           <div class="text3" style=" background: #fff; padding: 20px 5px 9px 7px; font-size:14px;">
+             <p style="text-align: center;"><span style="font-size:17px;color: #9a2220;">Model :</span><span style="font-size: 17px;">  Himalayan</span></p>
+               </div>
+            </div>
+            </div>
+          </div>
+          
+           <div class="item">
+            <div class="col-xs-12 col-sm-6 col-md-3 f">
+             <div id="two">
+            <a href="#"><img alt="bike" src="images/ry4.jpg" class="img-responsive"></a>
+           <div class="text3" style=" background: #fff; padding: 20px 5px 9px 7px; font-size:14px;">
+             <p style="text-align: center;"><span style="font-size:17px;color: #9a2220;">Model :</span><span style="font-size: 17px;">  Thunderbird 350</span></p>
+               </div>
+            </div>
+            </div>
+          </div>
+          
+           <div class="item">
+            <div class="col-xs-12 col-sm-6 col-md-3 f">
+             <div id="two">
+            <a href="#"><img alt="bike" src="images/ry5.jpg" class="img-responsive"></a>
+           <div class="text3" style=" background: #fff; padding: 20px 5px 9px 7px; font-size:14px;">
+             <p style="text-align: center;"><span style="font-size:17px;color: #9a2220;">Model :</span><span style="font-size: 17px;">  Classic 500</span></p>
+               </div>
+            </div>
+            </div>
+          </div>
+          
+           <div class="item">
+            <div class="col-xs-12 col-sm-6 col-md-3 f">
+             <div id="two">
+            <a href="#"><img alt="bike" src="images/ry6.jpg" class="img-responsive"></a>
+           <div class="text3" style=" background: #fff; padding: 20px 5px 9px 7px; font-size:14px;">
+             <p style="text-align: center;"><span style="font-size:17px;color: #9a2220;">Model :</span><span style="font-size: 17px;">  Classic Desert Strom</span></p>
+               </div>
+            </div>
+            </div>
+          </div>
+          
+          <div class="item">
+            <div class="col-xs-12 col-sm-6 col-md-3 f">
+             <div id="two">
+            <a href="#"><img alt="bike" src="images/ry7.jpg" class="img-responsive"></a>
+           <div class="text3" style=" background: #fff; padding: 20px 5px 9px 7px; font-size:14px;">
+             <p style="text-align: center;"><span style="font-size:17px;color: #9a2220;">Model :</span><span style="font-size: 17px;">  Thunderbird 500X</span></p>
+               </div>
+            </div>
+            </div>
+          </div>
+          
+          <div class="item">
+            <div class="col-xs-12 col-sm-6 col-md-3 f">
+             <div id="two">
+            <a href="#"><img alt="bike" src="images/ry8.jpg" class="img-responsive"></a>
+           <div class="text3" style=" background: #fff; padding: 20px 5px 9px 7px; font-size:14px;">
+             <p style="text-align: center;"><span style="font-size:17px;color: #9a2220;">Model :</span><span style="font-size: 17px;"> Classic Squadron Blue</span></p>
+               </div>
+            </div>
+            </div>
+          </div>
+          
+           <div class="item">
+            <div class="col-xs-12 col-sm-6 col-md-3 f">
+             <div id="two">
+            <a href="#"><img alt="bike" src="images/ry9.jpg" class="img-responsive"></a>
+           <div class="text3" style=" background: #fff; padding: 20px 5px 9px 7px; font-size:14px;">
+             <p style="text-align: center;"><span style="font-size:17px;color: #9a2220;">Model :</span><span style="font-size: 17px;">  Classic Chrome</span></p>
+               </div>
+            </div>
+            </div>
+          </div>
+        
+          
+        
+        </div>
+        <a class="left carousel-control" href="#carousel211" data-slide="prev"><i  class="glyphicon glyphicon-chevron-left a"></i></a>
+        <a class="right carousel-control" href="#carousel211" data-slide="next"><i class="glyphicon glyphicon-chevron-right a"></i></a>
+      </div>
+    </div>
+  </div>
+    </div>
+   <!-- --------------------------------------------- end Royal Enfield ------------------------------ --> 
+  
+   <!-- --------------------------------------------- ktm ------------------------------ -->   
+    <div id="KTM" class="tab-pane fade">
+    <h3></h3>
+      <div class="row">
+    <div class="col-md-12">
+      <div class="carousel carousel-showmanymoveone slide" id="carousel212">
+        <div class="carousel-inner" ">
+          <div class="item active">
+            <div class="col-xs-12 col-sm-6 col-md-3 f">
+             <div id="two">
+            <a href="#"><img alt="bike" src="images/kt1.jpg" class="img-responsive"></a>
+             <div class="text3" style=" background: #fff; padding: 20px 5px 9px 7px;font-size:14px;">
+              <p style="text-align: center;"><span style="font-size:17px;color: #9a2220;">Model :</span><span style="font-size: 17px;"> 250 Duke</span></p>
+               </div>
+            </div>
+          </div></div>
+                
+          <div class="item">
+            <div class="col-xs-12 col-sm-6 col-md-3 f">
+             <div id="two">
+            <a href="#"><img alt="bike" src="images/kt2.jpg" class="img-responsive"></a>
+           <div class="text3" style=" background: #fff; padding: 20px 5px 9px 7px; font-size:14px;">
+              <p style="text-align: center;"><span style="font-size:17px;color: #9a2220;">Model :</span><span style="font-size: 17px;">  200 Duke</span></p>
+               </div>
+            </div>
+            </div>
+          </div>
+          
+           <div class="item">
+            <div class="col-xs-12 col-sm-6 col-md-3 f">
+             <div id="two">
+            <a href="#"><img alt="bike" src="images/kt3.jpg" class="img-responsive"></a>
+           <div class="text3" style=" background: #fff; padding: 20px 5px 9px 7px; font-size:14px;">
+              <p style="text-align: center;"><span style="font-size:17px;color: #9a2220;">Model :</span><span style="font-size: 17px;"> 390 Duke</span></p>
+               </div>
+            </div>
+            </div>
+          </div>
+          
+           <div class="item">
+            <div class="col-xs-12 col-sm-6 col-md-3 f">
+             <div id="two">
+            <a href="#"><img alt="bike" src="images/kt4.jpg" class="img-responsive"></a>
+           <div class="text3" style=" background: #fff; padding: 20px 5px 9px 7px; font-size:14px;">
+              <p style="text-align: center;"><span style="font-size:17px;color: #9a2220;">Model :</span><span style="font-size: 17px;"> RC 200</span></p>
+               </div>
+            </div>
+            </div>
+          </div>
+         
+         <div class="item">
+            <div class="col-xs-12 col-sm-6 col-md-3 f">
+             <div id="two">
+            <a href="#"><img alt="bike" src="images/kt6.jpg" class="img-responsive"></a>
+           <div class="text3" style=" background: #fff; padding: 20px 5px 9px 7px; font-size:14px;">
+              <p style="text-align: center;"><span style="font-size:17px;color: #9a2220;">Model :</span><span style="font-size: 17px;"> RC 390</span></p>
+               </div>
+            </div>
+            </div>
+          </div>
+          
+       
+         
+         
+        </div>
+        <a class="left carousel-control" href="#carousel212" data-slide="prev"><i  class="glyphicon glyphicon-chevron-left a"></i></a>
+        <a class="right carousel-control" href="#carousel212" data-slide="next"><i class="glyphicon glyphicon-chevron-right a"></i></a>
+      </div>
+    </div>
+  </div>
+    </div>
+   <!-- --------------------------------------------- end ktm ------------------------------ --> 
+  
+   <!-- ---------------------------------------------  Kawasaki------------------------------ -->   
+    <div id="Kawasaki" class="tab-pane fade">
+    <h3></h3>
+    
+      <div class="row">
+    <div class="col-md-12">
+      <div class="carousel carousel-showmanymoveone slide" id="carousel213">
+        <div class="carousel-inner" ">
+          <div class="item active">
+            <div class="col-xs-12 col-sm-6 col-md-3 f">
+             <div id="two">
+            <a href="#"><img alt="bike" src="images/ktm1.jpg" class="img-responsive"></a>
+             <div class="text3" style=" background: #fff; padding: 20px 5px 9px 7px; font-size:14px;">
+             <p style="text-align: center;"><span style="font-size:17px;color: #9a2220;">Model :</span><span style="font-size: 17px;"> KLX 140</span></p>
+               </div>
+            </div>
+          </div></div>
+                
+          <div class="item">
+            <div class="col-xs-12 col-sm-6 col-md-3 f">
+             <div id="two">
+            <a href="#"><img alt="bike" src="images/ktm2.jpg" class="img-responsive"></a>
+           <div class="text3" style=" background: #fff; padding: 20px 5px 9px 7px; font-size:14px;">
+             <p style="text-align: center;"><span style="font-size:17px;color: #9a2220;">Model :</span><span style="font-size: 17px;"> Vulcan S</span></p>
+               </div>
+            </div>
+            </div>
+          </div>
+          
+          <div class="item">
+            <div class="col-xs-12 col-sm-6 col-md-3 f">
+             <div id="two">
+            <a href="#"><img alt="bike" src="images/ktm3.jpg" class="img-responsive"></a>
+           <div class="text3" style=" background: #fff; padding: 20px 5px 9px 7px; font-size:14px;">
+             <p style="text-align: center;"><span style="font-size:17px;color: #9a2220;">Model :</span><span style="font-size: 17px;"> KLX 450R</span></p>
+               </div>
+            </div>
+            </div>
+          </div>
+          
+          <div class="item">
+            <div class="col-xs-12 col-sm-6 col-md-3 f">
+             <div id="two">
+            <a href="#"><img alt="bike" src="images/ktm4.jpg" class="img-responsive"></a>
+           <div class="text3" style=" background: #fff; padding: 20px 5px 9px 7px; font-size:14px;">
+             <p style="text-align: center;"><span style="font-size:17px;color: #9a2220;">Model :</span><span style="font-size: 17px;"> Versys X-300</span></p>
+               </div>
+            </div>
+            </div>
+          </div>
+          
+           <div class="item">
+            <div class="col-xs-12 col-sm-6 col-md-3 f">
+             <div id="two">
+            <a href="#"><img alt="bike" src="images/ktm5.jpg" class="img-responsive"></a>
+           <div class="text3" style=" background: #fff; padding: 20px 5px 9px 7px; font-size:14px;">
+             <p style="text-align: center;"><span style="font-size:17px;color: #9a2220;">Model :</span><span style="font-size: 17px;">Versys X-300</span></p>
+               </div>
+            </div>
+            </div>
+          </div>
+          
+           <div class="item">
+            <div class="col-xs-12 col-sm-6 col-md-3 f">
+             <div id="two">
+            <a href="#"><img alt="bike" src="images/ktm6.jpg" class="img-responsive"></a>
+           <div class="text3" style=" background: #fff; padding: 20px 5px 9px 7px; font-size:14px;">
+             <p style="text-align: center;"><span style="font-size:17px;color: #9a2220;">Model :</span><span style="font-size: 17px;"> Z800</span></p>
+               </div>
+            </div>
+            </div>
+          </div>
+        
+        
+        
+        </div>
+        <a class="left carousel-control" href="#carousel213" data-slide="prev"><i  class="glyphicon glyphicon-chevron-left a"></i></a>
+        <a class="right carousel-control" href="#carousel213" data-slide="next"><i class="glyphicon glyphicon-chevron-right a"></i></a>
+      </div>
+    </div>
+  </div>
+    </div>
+     <!-- --------------------------------------------- end Kawasaki------------------------------ -->   
+     
+      <!-- ---------------------------------------------  Vespa------------------------------ -->       
+    <div id="Vespa" class="tab-pane fade">
+    <h3></h3>
+      <div class="row">
+    <div class="col-md-12">
+      <div class="carousel carousel-showmanymoveone slide" id="carousel214">
+        <div class="carousel-inner" ">
+          <div class="item active">
+            <div class="col-xs-12 col-sm-6 col-md-3 f">
+             <div id="two">
+            <a href="#"><img alt="bike" src="images/ves1.jpg" class="img-responsive"></a>
+             <div class="text3" style=" background: #fff; padding: 20px 5px 9px 7px; font-size:14px;">
+             <p style="text-align: center;"><span style="font-size:17px;color: #9a2220;">Model :</span><span style="font-size: 17px;">  VXL 150</span></p>
+               </div>
+            </div>
+          </div></div>
+                
+          <div class="item">
+            <div class="col-xs-12 col-sm-6 col-md-3 f">
+             <div id="two">
+            <a href="#"><img alt="bike" src="images/ves2.jpg" class="img-responsive"></a>
+           <div class="text3" style=" background: #fff; padding: 20px 5px 9px 7px; font-size:14px;">
+          <p style="text-align: center;"><span style="font-size:17px;color: #9a2220;">Model :</span><span style="font-size: 17px;">  LX 125</span></p>
+               </div>
+            </div>
+            </div>
+          </div>
+          
+          <div class="item">
+            <div class="col-xs-12 col-sm-6 col-md-3 f">
+             <div id="two">
+            <a href="#"><img alt="bike" src="images/ves3.jpg" class="img-responsive"></a>
+           <div class="text3" style=" background: #fff; padding: 20px 5px 9px 7px; font-size:14px;">
+          <p style="text-align: center;"><span style="font-size:17px;color: #9a2220;">Model :</span><span style="font-size: 17px;">  SLX 125</span></p>
+               </div>
+            </div>
+            </div>
+          </div>
+          
+          <div class="item">
+            <div class="col-xs-12 col-sm-6 col-md-3 f">
+             <div id="two">
+            <a href="#"><img alt="bike" src="images/ves4.jpg" class="img-responsive"></a>
+           <div class="text3" style=" background: #fff; padding: 20px 5px 9px 7px; font-size:14px;">
+          <p style="text-align: center;"><span style="font-size:17px;color: #9a2220;">Model :</span><span style="font-size: 17px;"> Elegante 150</span></p>
+               </div>
+            </div>
+            </div>
+          </div>
+          
+         
+        </div>
+        <a class="left carousel-control" href="#carousel214" data-slide="prev"><i  class="glyphicon glyphicon-chevron-left a"></i></a>
+        <a class="right carousel-control" href="#carousel214" data-slide="next"><i class="glyphicon glyphicon-chevron-right a"></i></a>
+      </div>
+    </div>
+  </div>
+    </div>
+    <!-- ---------------------------------------------  end Vespa------------------------------ -->  
+    
+    
+   <!-- ---------------------------------------------  Harley Davidson------------------------------ -->   
+      <div id="Harley1" class="tab-pane fade">
+    <h3></h3>
+     <div class="row">
+    <div class="col-md-12">
+      <div class="carousel carousel-showmanymoveone slide" id="carousel215">
+        <div class="carousel-inner" ">
+          <div class="item active">
+            <div class="col-xs-12 col-sm-6 col-md-3 f">
+             <div id="two">
+            <a href="#"><img alt="bike" src="images/hd1.jpg" class="img-responsive"></a>
+             <div class="text3" style=" background: #fff; padding: 20px 5px 9px 7px; font-size:14px;">
+              <p style="text-align: center;"><span style="font-size:17px;color: #9a2220;">Model :</span><span style="font-size: 17px;"> Street 750</span></p>
+               </div>
+            </div>
+          </div></div>
+                
+          <div class="item">
+            <div class="col-xs-12 col-sm-6 col-md-3 f">
+             <div id="two">
+            <a href="#"><img alt="bike" src="images/hd2.jpg" class="img-responsive"></a>
+           <div class="text3" style=" background: #fff; padding: 20px 5px 9px 7px;
+            font-size:14px;">
+              <p style="text-align: center;"><span style="font-size:17px;color: #9a2220;">Model :</span><span style="font-size: 17px;">Iron 883</span></p>
+               </div>
+            </div>
+            </div>
+          </div>
+          
+       
+          <div class="item">
+            <div class="col-xs-12 col-sm-6 col-md-3 f">
+             <div id="two">
+            <a href="#"><img alt="bike" src="images/hd4.jpg" class="img-responsive"></a>
+           <div class="text3" style=" background: #fff; padding: 20px 5px 9px 7px;
+            font-size:14px;">
+              <p style="text-align: center;"><span style="font-size:17px;color: #9a2220;">Model :</span><span style="font-size: 17px;"> Roadster</span></p>
+            
+               </div>
+            </div>
+            </div>
+          </div>
+         
+        </div>
+        <a class="left carousel-control" href="#carousel215" data-slide="prev"><i  class="glyphicon glyphicon-chevron-left a"></i></a>
+        <a class="right carousel-control" href="#carousel215" data-slide="next"><i class="glyphicon glyphicon-chevron-right a"></i></a>
+      </div>
+    </div>
+  </div>
+    </div>
+      <!-- --------------------------------------------- end  Harley Davidson------------------------------ -->
+      
+         <!-- ---------------------------------------------  BMW------------------------------ -->   
+      <div id="BMW" class="tab-pane fade">
+      <h3></h3>
+       <div class="row">
+    <div class="col-md-12">
+      <div class="carousel carousel-showmanymoveone slide" id="carousel216">
+        <div class="carousel-inner" ">
+          <div class="item active">
+            <div class="col-xs-12 col-sm-6 col-md-3 f">
+             <div id="two">
+            <a href="#"><img alt="bike" src="images/bmw1.jpg" class="img-responsive"></a>
+             <div class="text3" style=" background: #fff; padding: 20px 5px 9px 7px;
+            font-size:14px;">
+             <p style="text-align: center;"><span style="font-size:17px;color: #9a2220;">Model :</span><span style="font-size: 17px;"> F 750 GS</span></p>
+               </div>
+            </div>
+          </div></div>
+                
+          <div class="item">
+            <div class="col-xs-12 col-sm-6 col-md-3 f">
+             <div id="two">
+            <a href="#"><img alt="bike" src="images/bmw2.jpg" class="img-responsive"></a>
+           <div class="text3" style=" background: #fff; padding: 20px 5px 9px 7px;
+            font-size:14px;">
+             <p style="text-align: center;"><span style="font-size:17px;color: #9a2220;">Model :</span><span style="font-size: 17px;">  R 1200 R</span></p>
+               </div>
+            </div>
+            </div>
+          </div>
+          
+          <div class="item">
+            <div class="col-xs-12 col-sm-6 col-md-3 f">
+             <div id="two">
+            <a href="#"><img alt="bike" src="images/bmw3.jpg" class="img-responsive"></a>
+            <div class="text3" style=" background: #fff; padding: 20px 5px 9px 7px;
+            font-size:14px;">
+             <p style="text-align: center;"><span style="font-size:17px;color: #9a2220;">Model :</span><span style="font-size: 17px;"> S 1000 RR</span></p>
+               </div>
+            </div>
+            </div>
+          </div>
+          
+          <div class="item">
+            <div class="col-xs-12 col-sm-6 col-md-3 f">
+             <div id="two">
+            <a href="#"><img alt="bike" src="images/bmw4.jpg" class="img-responsive"></a>
+           <div class="text3" style=" background: #fff; padding: 20px 5px 9px 7px;
+            font-size:14px;">
+             <p style="text-align: center;"><span style="font-size:17px;color: #9a2220;">Model :</span><span style="font-size: 17px;"> K1600</span></p>
+       
+               </div>
+            </div>
+            </div>
+          </div>
+         
+        </div>
+        <a class="left carousel-control" href="#carousel216" data-slide="prev"><i  class="glyphicon glyphicon-chevron-left a"></i></a>
+        <a class="right carousel-control" href="#carousel216" data-slide="next"><i class="glyphicon glyphicon-chevron-right a"></i></a>
+      </div>
+    </div>
+  </div>
+      </div>
+     <!-- ---------------------------------------------  end BMW------------------------------ -->
+           
+         <!-- ---------------------------------------------  BMW------------------------------ -->   
+      <div id="UM" class="tab-pane fade">
+      <h3></h3>
+       <div class="row">
+    <div class="col-md-12">
+      <div class="carousel carousel-showmanymoveone slide" id="carousel296">
+        <div class="carousel-inner" ">
+          <div class="item active">
+            <div class="col-xs-12 col-sm-6 col-md-3 f">
+             <div id="two">
+            <a href="#"><img alt="bike" src="images/um1.jpg" class="img-responsive"></a>
+             <div class="text3" style=" background: #fff; padding: 20px 5px 9px 7px;
+            font-size:14px;">
+             <p style="text-align: center;"><span style="font-size:17px;color: #9a2220;">Model :</span><span style="font-size: 17px;"> Ranegade S</span></p>
+               </div>
+            </div>
+          </div></div>
+                
+          <div class="item">
+            <div class="col-xs-12 col-sm-6 col-md-3 f">
+             <div id="two">
+            <a href="#"><img alt="bike" src="images/um2.jpg" class="img-responsive"></a>
+           <div class="text3" style=" background: #fff; padding: 20px 5px 9px 7px;
+            font-size:14px;">
+             <p style="text-align: center;"><span style="font-size:17px;color: #9a2220;">Model :</span><span style="font-size: 17px;">  Ranegade Commando</span></p>
+               </div>
+            </div>
+            </div>
+          </div>
+          
+          <div class="item">
+            <div class="col-xs-12 col-sm-6 col-md-3 f">
+             <div id="two">
+            <a href="#"><img alt="bike" src="images/um3.jpg" class="img-responsive"></a>
+            <div class="text3" style=" background: #fff; padding: 20px 5px 9px 7px;
+            font-size:14px;">
+             <p style="text-align: center;"><span style="font-size:17px;color: #9a2220;">Model :</span><span style="font-size: 17px;"> Commando Classic</span></p>
+               </div>
+            </div>
+            </div>
+          </div>
+          
+          
+        </div>
+        <a class="left carousel-control" href="#carousel296" data-slide="prev"><i  class="glyphicon glyphicon-chevron-left a"></i></a>
+        <a class="right carousel-control" href="#carousel296" data-slide="next"><i class="glyphicon glyphicon-chevron-right a"></i></a>
+      </div>
+    </div>
+  </div>
+      </div>
+     <!-- ---------------------------------------------  end BMW------------------------------ -->
+     
+     
+     
+   
+      
+     </div>
+</div>
+
+<script src='http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>
+<script src='http://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js'></script>
+ <script src="assets/js/car.js"></script>
+
+ <script src="http://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+ <script src="http://netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js"></script>
+ <script src="assets/js/st-demo.js"></script>
+ <script src="assets/js/jquery.scrolling-tabs.js"></script>
+</body>
+</html>

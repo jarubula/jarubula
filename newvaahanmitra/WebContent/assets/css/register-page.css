@@ -1,0 +1,177 @@
+.auctionFormRight {
+   /*  width: 450px; */
+    padding: 0px !important;
+}
+
+.auctionFormLeft {
+    width: 100%;
+    /* border-right: 1px solid #e5e5e5; */
+    margin-right: 15px;
+    padding: 0px 20px 0 0;
+}
+.sellCarInfolist {
+    margin-top: 15px;
+}
+ul.sellCarInfolist {
+    list-style: none outside none;
+    margin: 0;
+    padding: 0;
+}
+ul.sellCarInfolist {
+    list-style: none outside none;
+    margin: 0;
+    padding: 0;
+}
+.sellIconImgWrapper {
+    width: 70px;
+}
+.sellCarInfolist li {
+    border-bottom: 1px dashed #ccc;
+    padding-bottom: 16px;
+    margin-bottom: 16px;
+}
+.sellIconImgWrapper {
+    width: 70px;
+}
+.sellicon1 {
+    margin: 8px 0px 0px 3px;
+}
+.sellIconTxtWrapper {
+   /*  width: 350px; */
+    margin-left: 15px;
+}
+.sellicon1, .sellicon2, .sellicon3, .sellicon4, .sellicon5 {
+    width: 68px;
+    height: 40px;
+    background: url("images/sellcar_sprites.png") no-repeat 0px 0px;
+    display: block;
+}
+.sellIconTxtWrapper h2 {
+    color: #d4282a;
+    font-size: 16px;
+    font-family: Arial, Helvetica, sans-serif;
+    text-transform: uppercase;
+}
+.sellIconTxtWrapper p {
+    color: #666;
+    font-size: 11px;
+}
+
+.aucformTitle {
+    background: #9a2220;
+    border: none;
+    color: #fff;
+    padding: 10px 20px;
+    margin: 0px;
+    font-size: 23px;
+    font-family: sans-serif;
+    border-radius: 6px 6px 0px 0px;
+   
+}
+
+.auctionMainForm #sellfrm {
+    padding: 20px;
+}
+
+.auctionMainForm {
+padding: 0px;
+    border-radius: 6px 6px 6px 6px;
+    border: none;
+    background: #f5f5f5;
+    box-shadow: 0px 0px 16px #ddd;
+}
+.aucformFieldsBox {
+    color: #666666;
+    font: 12px/16px Arial, Helvetica, sans-serif;
+    overflow: hidden;
+}
+.aucformFieldsBox label {
+    color: #333;
+}
+.aucformFieldsBox label {
+    float: left;
+    font: 12px Arial, Helvetica, sans-serif;
+    height: 30px;
+    margin: 0px;
+    text-align: left;
+    width: 120px;
+    line-height: 34px;
+}
+.aucformFieldsBox select {
+    border: 1px solid #ccc;
+    margin: 0px;
+}
+
+.aucformFieldsBox {
+    color: #666666;
+    font: 12px/16px Arial, Helvetica, sans-serif;
+    overflow: hidden;
+}
+.frmsubhead {
+    color: #333;
+    border-bottom: 1px dashed #333;
+    margin: 20px 0px 15px;
+    font: 18px/20px Arial, Helvetica, sans-serif;
+}
+
+.aucformFieldsBox select {
+  /*   width: 235px; */
+}
+.aucformFieldsBox select {
+    background: #FFFFFF;
+    height: 30px;
+        margin: 0 0 10px !important;
+    padding: 4px;
+        color: #888888;
+   /*  float: right; */
+}
+.email{margin-bottom: 10px;}
+.aucformFieldsBox {
+	/* margin-bottom: 4px; */
+    color: #666666;
+    font: 12px/16px Arial, Helvetica, sans-serif;
+    
+}
+
+.aucformFieldsBox label {
+    color: #333;
+}
+
+.aucformFieldsBox label {
+    float: left;
+    font: 12px Arial, Helvetica, sans-serif;
+    height: 30px;
+    margin: 0px;
+    text-align: left;
+    width: 120px;
+    line-height: 34px;
+}
+.asholder {
+    position: relative;
+}
+
+.aucformFieldsBox input[type="text"], .sellcarnew .aucformFieldsBox select {
+    border: 1px solid #ccc;
+    margin: 0px;
+}
+.aucformFieldsBox input[type="text"], .aucformFieldsBox select {
+    /* width: 225px; */
+}
+.aucformFieldsBox input[type="text"], .aucformFieldsBox select {
+    background: #FFFFFF;
+    
+    color: #888888;
+    /* float: right; */
+   
+    height: 30px;
+    margin: 0 0 0px !important;
+    padding: 4px;
+    
+}
+
+.auctionMainForm h3, .auctionMainForm .frmsubhead {
+   
+    font: 18px/20px Arial, Helvetica, sans-serif;
+ 
+    padding: 0 0 6px;
+}

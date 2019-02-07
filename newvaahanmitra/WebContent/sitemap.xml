@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset
+      xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+      xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+      xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9
+            http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
+<!-- created with Free Online Sitemap Generator www.xml-sitemaps.com -->
+
+
+<url>
+  <loc>http://www.vaahanmitra.com/</loc>
+  <lastmod>2018-06-08T12:48:23+00:00</lastmod>
+  <priority>1.00</priority>
+</url>
+<url>
+  <loc>http://www.vaahanmitra.com/index.jsp</loc>
+  <lastmod>2018-06-08T12:48:23+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>http://www.vaahanmitra.com/searchHServiceUsedCar.jsp</loc>
+  <lastmod>2018-06-08T12:48:23+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>http://www.vaahanmitra.com/searchHServiceUsedBike.jsp</loc>
+  <lastmod>2018-06-08T12:48:23+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>http://www.vaahanmitra.com/searchHServiceMechanic.jsp</loc>
+  <lastmod>2018-06-08T12:48:23+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>http://www.vaahanmitra.com/searchHServiceUsedVehicleDealer.jsp</loc>
+  <lastmod>2018-06-08T12:48:23+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>http://www.vaahanmitra.com/servicecenter.jsp</loc>
+  <lastmod>2018-06-08T12:48:23+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>http://www.vaahanmitra.com/vehicleFinance.jsp</loc>
+  <lastmod>2018-06-08T12:48:23+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>http://www.vaahanmitra.com/roadAssistance.jsp</loc>
+  <lastmod>2018-06-08T12:48:23+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>http://www.vaahanmitra.com/vehicleInsurence.jsp</loc>
+  <lastmod>2018-06-08T12:48:23+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>http://www.vaahanmitra.com/login3.jsp</loc>
+  <lastmod>2018-06-08T12:48:23+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>http://www.vaahanmitra.com/register.jsp</loc>
+  <lastmod>2018-06-08T12:48:23+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>http://www.vaahanmitra.com/car.html</loc>
+  <lastmod>2018-05-17T09:23:58+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>http://www.vaahanmitra.com/bike.html</loc>
+  <lastmod>2018-05-17T09:24:04+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>http://www.vaahanmitra.com/service1.html</loc>
+  <lastmod>2018-05-17T09:23:58+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>http://www.vaahanmitra.com/service.html</loc>
+  <lastmod>2018-05-17T09:23:58+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>http://www.vaahanmitra.com/used-cars.html</loc>
+  <lastmod>2018-05-17T09:24:04+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>http://www.vaahanmitra.com/forgotPasswordEmail.jsp</loc>
+  <lastmod>2018-06-08T12:48:23+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+
+
+</urlset>
